@@ -7,26 +7,23 @@ export const Login = ({ onLoginSuccess, onSignUp }) => {
     onLoginSuccess,
     onSignUp,
   });
-  return (
-    <div className="bg-white rounded-[12px] border border-[#CFD6E9] p-[22px] md:px-[140px] md:py-[60px]">
-      <div className="flex items-center flex-col">
-        <img
-          src={logo}
-          alt="logo"
-          className="min-w-[162px] min-h-[165px] max-w-[162px] max-h-[165px]"
-        />
-        <p className="font-medium text-[22px] text-[#808080] mt-5 mb-[30px] text-center">
-          Please enter your phone number so we can send you an authentication
-          code!
-        </p>
-      </div>
 
-      <Form
-        formFields={fields}
-        handleSubmit={handleSubmit}
-        onSubmit={onSubmit}
-        errors={errors}
-      />
+  return (
+    <div className="bg-white px-[93px] py-[150px] flex justify-between items-center">
+      <img src={logo} alt="logo" className="pr-[93px]" />
+
+      <div className="flex flex-col gap-y-[114px] pl-[93px] border-l border-l-[#ccc]">
+        <div className="flex flex-col items-center gap-y-1">
+          <h2 className="text-[48px] font-normal">Welcome</h2>
+          <p className="text-sm font-bold">PLASE LOGIN TO ADMIN DASHBOARD.</p>
+        </div>
+        <Form
+          formFields={fields}
+          handleSubmit={handleSubmit}
+          onSubmit={onSubmit}
+          errors={errors}
+        />
+      </div>
     </div>
   );
 };

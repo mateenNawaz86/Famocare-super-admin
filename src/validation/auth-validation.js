@@ -1,7 +1,8 @@
 import * as yup from "yup";
 
 export const login = {
-  phoneNo: "phoneNo",
+  user: "phoneNo",
+  password: "password",
 };
 
 export const phoneVarification = {
@@ -17,6 +18,7 @@ export const signup = {
 export const generateLoginValidationSchema = () => {
   return yup.object().shape({
     [login.phoneNo]: yup.string().required("This field is required"),
+    [login.password]: yup.string().required("This field is required"),
   });
 };
 

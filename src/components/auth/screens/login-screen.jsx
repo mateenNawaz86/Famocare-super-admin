@@ -9,13 +9,15 @@ export const Login = ({ onLoginSuccess, onSignUp }) => {
   });
 
   return (
-    <div className="bg-white px-[93px] py-[150px] flex justify-between items-center">
-      <img src={logo} alt="logo" className="pr-[93px]" />
+    <div className="bg-white flex w-full min-h-screen py-[150px]">
+      <div className="flex justify-center items-center w-1/2 px-[93px]">
+        <img src={logo} alt="logo" className="h-[240px]" />
+      </div>
 
-      <div className="flex flex-col gap-y-[114px] pl-[93px] border-l border-l-[#ccc]">
-        <div className="flex flex-col items-center gap-y-1">
+      <div className="flex flex-col justify-center gap-y-[114px] w-1/2 px-[93px] py-[95px] border-l-2 border-[#ccc]">
+        <div className="flex flex-col items-center gap-y-[22px]">
           <h2 className="text-[48px] font-normal">Welcome</h2>
-          <p className="text-sm font-bold">PLASE LOGIN TO ADMIN DASHBOARD.</p>
+          <p className="text-sm font-bold">PLEASE LOGIN TO ADMIN DASHBOARD.</p>
         </div>
         <Form
           formFields={fields}

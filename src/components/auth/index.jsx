@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Login } from "./screens/login-screen";
 import { LandingPage } from "./screens/landing-page";
 import { PhoneVarification } from "./screens/phone-verification";
+import { ForgotPassword } from "./screens/forgot-password";
 
 export const Auth = () => {
   const [currentScreen, setCurrentScreen] = useState("landing");
@@ -24,25 +25,28 @@ export const Auth = () => {
   };
 
   const handleBack = () => {
-    setCurrentScreen("login");
+    setCurrentScreen("forgotPassword");
   };
 
-  const handleSignUp = () => {
-    setCurrentScreen("signup");
+  const handleForgotPassword = () => {
+    setCurrentScreen("forgotPassword");
   };
 
   const screens = {
     landing: <LandingPage />,
-    signup: <SignUp onSignupSuccess={handleSignupSuccess} />,
     login: (
-      <Login onLoginSuccess={handleLoginSuccess} onSignUp={handleSignUp} />
+      <Login
+        onLoginSuccess={handleLoginSuccess}
+        onForgotPassword={handleForgotPassword}
+      />
     ),
-    phone: <PhoneVarification onBack={handleBack} onSignUp={handleSignUp} />,
+    forgotPassword: (
+      <ForgotPassword onBack={handleBack} onSuccess={handleLoginSuccess} />
+    ),
+    phone: (
+      <PhoneVarification onBack={handleBack} onSignUp={handleSignupSuccess} />
+    ),
   };
 
-  return (
-    <div className="flex items-center justify-center md:h-screen">
-      {screens[currentScreen]}
-    </div>
-  );
+  return <div className="my-[150px]">{screens[currentScreen]}</div>;
 };

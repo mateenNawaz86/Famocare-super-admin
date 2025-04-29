@@ -6,7 +6,7 @@ import { LoginContactFormFields } from "../../components/auth/fields/login-field
 import { logIn } from "../../api/slices/authSlice/auth";
 import { parsePhoneNumberFromString } from "libphonenumber-js";
 
-export const useLogin = ({ onLoginSuccess, onSignUp }) => {
+export const useLogin = ({ onLoginSuccess, onForgotPassword }) => {
   const dispatch = useDispatch();
   const { loading } = useSelector((state) => state.auth);
 
@@ -22,7 +22,12 @@ export const useLogin = ({ onLoginSuccess, onSignUp }) => {
     resolver: yupResolver(schema),
   });
 
-  const fields = LoginContactFormFields(register, loading, control);
+  const fields = LoginContactFormFields(
+    register,
+    loading,
+    control,
+    onForgotPassword
+  );
 
   const onSubmit = async (data) => {
     const phoneNumber = parsePhoneNumberFromString(data?.phoneNo);
@@ -54,7 +59,7 @@ export const useLogin = ({ onLoginSuccess, onSignUp }) => {
       if (isReqistered) {
         onLoginSuccess();
       } else {
-        onSignUp();
+        onForgotPassword();
       }
     } catch (error) {
       console.error("Login error:", error);

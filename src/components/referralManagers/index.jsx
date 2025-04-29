@@ -9,7 +9,7 @@ import { Pagination } from "../../base-component/ui/pagination/pagination";
 import { NoDataEmptyState } from "../../base-component/ui/loadingEffect/no-data-state";
 import { CustomLoader } from "../../base-component/ui/loadingEffect/custom-loader";
 
-export const FreeUserListing = () => {
+export const ReferralMangers = () => {
   const {
     dummyData,
     loading,

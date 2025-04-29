@@ -1,6 +1,11 @@
 import { Field } from "../../../utils/static";
 
-export const LoginContactFormFields = (register, loading, control) => {
+export const LoginContactFormFields = (
+  register,
+  loading,
+  control,
+  onForgotPassword
+) => {
   let formField = [
     {
       containerClass: "mb-[22px]",
@@ -57,6 +62,7 @@ export const LoginContactFormFields = (register, loading, control) => {
         containerClassName:
           "text-xs text-primary font-semibold text-center cursor-pointer",
         id: "forgotPassword",
+        onClick: onForgotPassword,
       },
     },
   ];
@@ -77,41 +83,33 @@ export const PhoneVarificationFormFields = (
         type: Field.otpField,
         id: "otp",
         name: "otp",
+        length: 4,
         control,
-      },
-    },
-    {
-      field: {
-        type: Field.span,
-        text: "Did not receive a code?",
-        containerClassName:
-          "text-sm md:text-[22px] text-dark font-medium text-center hidden md:block",
-        id: "info",
       },
     },
 
     {
-      containerClass:
-        "mb-0 mt-[35px] hidden md:flex items-center justify-center",
+      containerClass: "mb-0 mt-[130px] flex items-center justify-center",
       field: {
         type: Field.button,
         id: "button",
-        text: "RESEND",
-        inputType: "button",
-        onClick: onBack,
-        className: "bg-none w-fit hover:bg-none text-primary",
+        text: "Send",
+        inputType: "submit",
+        className:
+          "rounded-[6px] md:w-[309px] h-[42px] hover:bg-none bg-[#055860] font-bold",
         loading,
       },
     },
 
     {
-      containerClass: "mb-0 mt-10",
+      containerClass: "mb-0 mt-6 hidden md:flex items-end justify-end",
       field: {
         type: Field.button,
         id: "button",
-        text: "Verify Code",
-        inputType: "submit",
-        className: "rounded-xl w-full h-[50px] hover:bg-none",
+        text: "RESEND CODE",
+        inputType: "button",
+        onClick: onBack,
+        className: "bg-none w-fit hover:bg-none text-primary ",
         loading,
       },
     },

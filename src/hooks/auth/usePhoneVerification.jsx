@@ -1,16 +1,16 @@
 import { useEffect } from "react";
+import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { generateOtpValidationSchema } from "../../validation/auth-validation";
 import { PhoneVarificationFormFields } from "../../components/auth/fields/login-fields";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 
 export const usePhoneVerification = ({ onBack }) => {
   const navigate = useNavigate();
-  const { loading, user } = useSelector((state) => state.auth);
   const schema = generateOtpValidationSchema();
+  const { loading, user } = useSelector((state) => state.auth);
 
   const {
     register,

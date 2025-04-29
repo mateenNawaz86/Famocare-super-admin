@@ -2,15 +2,15 @@ import logo from "../../../assets/svgs/logo.svg";
 import { Form } from "../../../base-component/form/form";
 import { useLogin } from "../../../hooks/auth/useLogin";
 
-export const Login = ({ onLoginSuccess, onSignUp }) => {
+export const Login = ({ onLoginSuccess, onForgotPassword }) => {
   const { handleSubmit, errors, fields, onSubmit } = useLogin({
     onLoginSuccess,
-    onSignUp,
+    onForgotPassword,
   });
 
   return (
-    <div className="bg-white flex w-full min-h-screen py-[150px]">
-      <div className="flex justify-center items-center w-1/2 px-[93px]">
+    <div className="bg-white flex w-full">
+      <div className="flex justify-center items-center w-1/2">
         <img src={logo} alt="logo" className="h-[240px]" />
       </div>
 

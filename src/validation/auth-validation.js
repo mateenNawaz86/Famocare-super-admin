@@ -5,6 +5,10 @@ export const login = {
   password: "password",
 };
 
+export const forgotpassword = {
+  email: "email",
+};
+
 export const phoneVarification = {
   otp: "otp",
 };
@@ -33,5 +37,11 @@ export const generateSignUpValidationSchema = () => {
     [signup.imageUrl]: yup.string().required("This field is required"),
     [signup.name]: yup.string().required("This field is required"),
     [signup.country]: yup.string().required("This field is required"),
+  });
+};
+
+export const generateForgotPasswordValidationSchema = () => {
+  return yup.object().shape({
+    [forgotpassword.email]: yup.string().required("This field is required"),
   });
 };

@@ -7,6 +7,8 @@ import { scrollToTop } from "./utils/utility";
 import { ToastContainer } from "react-toastify";
 import { setUser } from "./api/slices/authSlice/auth";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import { ReferralManagersPage } from "./pages/referralManagers";
+import PrivateRoute from "./base-component/private-route";
 
 const App = () => {
   const location = useLocation();
@@ -19,7 +21,7 @@ const App = () => {
       dispatch(setUser(user));
 
       if (location.pathname === "/") {
-        navigate("/dashboard?status=ref-guide", { replace: true });
+        navigate("/referral-managers", { replace: true });
       }
     }
   }, [user, location.pathname, navigate, dispatch]);
@@ -34,6 +36,10 @@ const App = () => {
 
       <Routes>
         <Route path="/" element={<AuthPage />} />
+        <Route
+          path="/referral-managers"
+          element={<PrivateRoute element={<ReferralManagersPage />} />}
+        />
       </Routes>
     </>
   );

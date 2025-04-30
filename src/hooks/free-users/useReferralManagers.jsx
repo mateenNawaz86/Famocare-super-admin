@@ -5,7 +5,7 @@ import { readFreeUserListing } from "../../api/slices/freeUserSlice/freeUser";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { FiltersDefaultValues } from "../../utils/static";
 
-export const useFreeUser = () => {
+export const useReferralManagers = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const { user, loading: authLoading } = useSelector((state) => state.auth);

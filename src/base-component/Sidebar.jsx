@@ -4,30 +4,32 @@ import { motion } from "framer-motion";
 import logo from "../assets/svgs/logo.svg";
 import { sideBar, staticEnums } from "../utils/static";
 import { DashboardIcon } from "../assets/svgs/components/dashboard-icon";
-import { UsersIcon } from "../assets/svgs/components/users-icon";
-import { MonthlyPremIcon } from "../assets/svgs/components/monthly-prem-icon";
-import { YearlyPremIcon } from "../assets/svgs/components/yearly-prem-icon";
-import { MyRewardsIcon } from "../assets/svgs/components/rewards-icon";
-import { RequestRedeemIcon } from "../assets/svgs/components/redeem-icon";
-import { PointIcon } from "../assets/svgs/components/point-icon";
-import { CouponIcon } from "../assets/svgs/components/coupon-icon";
-import { RedeeemHistoryIcon } from "../assets/svgs/components/redeem-history-icon";
-import { LogoutIcon } from "../assets/svgs/components/logout-icon";
 import { useDispatch, useSelector } from "react-redux";
 import { updateModalType } from "../api/slices/globalSlice/global";
 import { ModalType } from "../types/ui";
 import { CrossIcon } from "../assets/svgs/components/cross-icon";
+import { ReferralManagersIcon } from "../assets/svgs/components/referral-managers-icon";
+import { SupportManagersIcon } from "../assets/svgs/components/support-icon";
+import { VersionControlIcon } from "../assets/svgs/components/version-control";
+import { GuideVideoIcon } from "../assets/svgs/components/guide-video-icon";
+import { GuideTextIcon } from "../assets/svgs/components/guide-text-icon";
+import { GroupsIcon } from "../assets/svgs/components/groups-icon";
+import { PolicyDocumentsIcon } from "../assets/svgs/components/policy-documents-icon";
+import { LimitsManagementIcon } from "../assets/svgs/components/limits-management-icon";
+import { ProfileIcon } from "../assets/svgs/components/profile-icon";
+import { LogoutIcon } from "../assets/svgs/components/logout-icon";
 
 export const svgs = {
-  Dashboard: <DashboardIcon />,
-  Users: <UsersIcon />,
-  MonthlyPrem: <MonthlyPremIcon />,
-  YearlyPrem: <YearlyPremIcon />,
-  MyRewards: <MyRewardsIcon />,
-  RequestRedeem: <RequestRedeemIcon />,
-  Point: <PointIcon />,
-  Coupon: <CouponIcon />,
-  RedeemHistory: <RedeeemHistoryIcon />,
+  notifications: <DashboardIcon />,
+  refManagers: <ReferralManagersIcon />,
+  supportManagers: <SupportManagersIcon />,
+  versionControls: <VersionControlIcon />,
+  guideVideo: <GuideVideoIcon />,
+  guideText: <GuideTextIcon />,
+  groups: <GroupsIcon />,
+  policyDocuments: <PolicyDocumentsIcon />,
+  limitsManagement: <LimitsManagementIcon />,
+  profileSetting: <ProfileIcon />,
   Logout: <LogoutIcon />,
   dummy: <></>,
 };
@@ -124,7 +126,7 @@ export const SideBar = ({ isDrawer, handleDrawer }) => {
                     onClick={() => routeChangeHandler(item)}
                     className={`rounded-lg flex justify-between items-center p-4 w-full break-all ${
                       selected.parent.title === item.title
-                        ? "bg-[#691188] hover:bg-[#691188]"
+                        ? "bg-newPremimary hover:bg-[#691188]"
                         : "hover:bg-[#E9E1FF]"
                     }`}
                   >

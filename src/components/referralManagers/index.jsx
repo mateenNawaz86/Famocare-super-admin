@@ -3,11 +3,11 @@ import { useEmptyStates } from "../../utils/hooks";
 import { FreeUserCard } from "./mobile/free-user-card";
 import { FreeUsersTableRows } from "./table/table-rows";
 import { FreeUsersTableHeadings } from "./table/table-heading";
-import { useFreeUser } from "../../hooks/free-users/userFreeUser";
 import SelectField from "../../base-component/ui/fields/select-fields";
 import { Pagination } from "../../base-component/ui/pagination/pagination";
 import { NoDataEmptyState } from "../../base-component/ui/loadingEffect/no-data-state";
 import { CustomLoader } from "../../base-component/ui/loadingEffect/custom-loader";
+import { useReferralManagers } from "../../hooks/free-users/useReferralManagers";
 
 export const ReferralMangers = () => {
   const {
@@ -22,7 +22,7 @@ export const ReferralMangers = () => {
     totalCount,
     sort,
     hanldeSortChange,
-  } = useFreeUser();
+  } = useReferralManagers();
 
   const CurrentComponent = useEmptyStates(
     <FreeUsersTableRows data={currentPageRows?.data?.freeUsers} />,

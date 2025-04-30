@@ -16,15 +16,15 @@ const App = () => {
   const dispatch = useDispatch();
   const user = isJSON(getUser());
 
-  useEffect(() => {
-    if (user) {
-      dispatch(setUser(user));
+  // useEffect(() => {
+  //   if (user) {
+  //     dispatch(setUser(user));
 
-      if (location.pathname === "/") {
-        navigate("/referral-managers", { replace: true });
-      }
-    }
-  }, [user, location.pathname, navigate, dispatch]);
+  //     if (location.pathname === "/") {
+  //       navigate("/referral-managers", { replace: true });
+  //     }
+  //   }
+  // }, [user, location.pathname, navigate, dispatch]);
 
   useEffect(() => {
     scrollToTop();
@@ -38,7 +38,8 @@ const App = () => {
         <Route path="/" element={<AuthPage />} />
         <Route
           path="/referral-managers"
-          element={<PrivateRoute element={<ReferralManagersPage />} />}
+          // element={<PrivateRoute element={<ReferralManagersPage />} />}
+          element={<ReferralManagersPage />}
         />
       </Routes>
     </>

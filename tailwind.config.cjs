@@ -29,7 +29,7 @@ module.exports = {
         maxLargePro: "1900px",
       },
       colors: {
-        newPremimary: "#055860",
+        newPreimary: "#055860",
         primary: "#691188",
         warning: "#F2994A",
         tableHoverColor: "#E9E1FF",

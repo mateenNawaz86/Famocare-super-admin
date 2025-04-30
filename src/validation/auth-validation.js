@@ -18,10 +18,13 @@ export const phoneVarification = {
   otp: "otp",
 };
 
-export const signup = {
-  imageUrl: "imageUrl",
-  name: "name",
-  country: "country",
+export const profileSetting = {
+  image: "image",
+  fullName: "fullName",
+  userId: "userId",
+  email: "email",
+  password: "password",
+  confirmPassword: "confirmPassword",
 };
 
 export const generateLoginValidationSchema = () => {
@@ -37,11 +40,16 @@ export const generateOtpValidationSchema = () => {
   });
 };
 
-export const generateSignUpValidationSchema = () => {
+export const generateProfileSettingValidationSchema = () => {
   return yup.object().shape({
-    [signup.imageUrl]: yup.string().required("This field is required"),
-    [signup.name]: yup.string().required("This field is required"),
-    [signup.country]: yup.string().required("This field is required"),
+    [profileSetting.image]: yup.string().required("This field is required"),
+    [profileSetting.fullName]: yup.string().required("This field is required"),
+    [profileSetting.userId]: yup.string().required("This field is required"),
+    [profileSetting.email]: yup.string().required("This field is required"),
+    [profileSetting.password]: yup.string().required("This field is required"),
+    [profileSetting.confirmPassword]: yup
+      .string()
+      .required("This field is required"),
   });
 };
 

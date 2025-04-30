@@ -126,7 +126,7 @@ export const SideBar = ({ isDrawer, handleDrawer }) => {
                     onClick={() => routeChangeHandler(item)}
                     className={`rounded-lg flex justify-between items-center p-4 w-full break-all ${
                       selected.parent.title === item.title
-                        ? "bg-newPremimary hover:bg-[#691188]"
+                        ? "bg-newPreimary hover:bg-[#691188]"
                         : "hover:bg-[#E9E1FF]"
                     }`}
                   >

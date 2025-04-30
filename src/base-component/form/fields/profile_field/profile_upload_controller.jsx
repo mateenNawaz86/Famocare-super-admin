@@ -32,7 +32,6 @@ export const ProfileControllerField = ({
   );
 };
 
-// Prop validation
 ProfileControllerField.propTypes = {
   control: PropTypes.any,
   id: PropTypes.string,

@@ -1,4 +1,3 @@
-import { SignUp } from "./screens/sign-up";
 import { useEffect, useState } from "react";
 import { Login } from "./screens/login-screen";
 import { LandingPage } from "./screens/landing-page";
@@ -16,10 +15,6 @@ export const Auth = () => {
 
     return () => clearTimeout(timer);
   }, []);
-
-  const handleSignupSuccess = () => {
-    setCurrentScreen("login");
-  };
 
   const handleLoginSuccess = () => {
     setCurrentScreen("phone");

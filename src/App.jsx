@@ -5,10 +5,9 @@ import { isJSON } from "./utils/function";
 import { AuthPage } from "./pages/auth";
 import { scrollToTop } from "./utils/utility";
 import { ToastContainer } from "react-toastify";
-import { setUser } from "./api/slices/authSlice/auth";
-import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { ReferralManagersPage } from "./pages/referralManagers";
-import PrivateRoute from "./base-component/private-route";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import { ProfileSettingPage } from "./pages/profileSetting";
 
 const App = () => {
   const location = useLocation();
@@ -40,6 +39,11 @@ const App = () => {
           path="/referral-managers"
           // element={<PrivateRoute element={<ReferralManagersPage />} />}
           element={<ReferralManagersPage />}
+        />
+        <Route
+          path="/profile-setting"
+          // element={<PrivateRoute element={<ReferralManagersPage />} />}
+          element={<ProfileSettingPage />}
         />
       </Routes>
     </>

@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { combineClasses } from "../../../../utils/utility";
 
 export const CustomOtpField = ({
   length = 6,
@@ -7,20 +8,21 @@ export const CustomOtpField = ({
   id,
   className,
   disabled,
+  boxClassName,
 }) => {
   const [otp, setOtp] = useState(new Array(length).fill(""));
   const inputRefs = useRef(new Array(length).fill(null));
 
   useEffect(() => {
     if (field.value) {
-      const otpArray = field.value.split("").slice(0, length); 
+      const otpArray = field.value.split("").slice(0, length);
       const newOtp = new Array(length)?.fill("");
       otpArray?.forEach((digit, index) => {
-        newOtp[index] = digit; 
+        newOtp[index] = digit;
       });
       setOtp(newOtp);
     } else {
-      setOtp(new Array(length).fill("")); 
+      setOtp(new Array(length).fill(""));
     }
   }, [field.value, length]);
 
@@ -49,8 +51,16 @@ export const CustomOtpField = ({
     }
   };
 
+  const boxClasses = combineClasses(
+    `w-[48px] h-[54px] md:w-[76px] md:h-[76px] border border-borderColor text-center text-xl rounded-md focus:border-primary outline-none ${boxClassName}`
+  );
+
+  const containerClasses = combineClasses(
+    `flex justify-between gap-x-[15px] ${className}`
+  );
+
   return (
-    <div className={`flex justify-between md:gap-x-[15px] ${className}`}>
+    <div className={`${containerClasses}`}>
       {otp?.map((digit, index) => (
         <input
           key={index}
@@ -60,7 +70,7 @@ export const CustomOtpField = ({
           value={digit}
           onChange={(e) => handleChange(index, e)}
           onKeyDown={(e) => handleKeyDown(index, e)}
-          className="w-[48px] h-[54px] md:w-[76px] md:h-[76px] border border-borderColor text-center text-xl rounded-md focus:border-primary outline-none"
+          className={boxClasses}
           disabled={disabled}
         />
       ))}

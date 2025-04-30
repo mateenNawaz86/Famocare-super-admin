@@ -85,6 +85,8 @@ export const PhoneVarificationFormFields = (
         name: "otp",
         length: 4,
         control,
+        className: "flex items-center !justify-center gap-x-10",
+        boxClassName: "w-[55px] h-[58px]",
       },
     },
 

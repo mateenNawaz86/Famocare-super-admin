@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { combineClasses } from "../../../utils/utility";
+import { EyeCloseIcon } from "../../../assets/svgs/components/eye-close-icon";
+import { OpenEyeIcon } from "../../../assets/svgs/components/open-close-icon";
 
 export const InputField = ({
   id,
@@ -23,6 +25,7 @@ export const InputField = ({
   step,
 }) => {
   const [inputFocus, setInputFocus] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const defaultClasses = `border border-borderColor rounded-lg w-full h-10 xMini:h-12 bg-white ${
     success ? "pl-4 pr-10" : "pl-11 pr-4"
@@ -53,6 +56,9 @@ export const InputField = ({
     };
   }, [id]);
 
+  const updatedInputType =
+    inputType === "password" && showPassword ? "text" : inputType;
+
   return (
     <div className="relative w-full flex items-center">
       {svg && (
@@ -74,7 +80,7 @@ export const InputField = ({
         onFocus={() => setInputFocus(true)}
         onBlur={() => setInputFocus(false)}
         id={id}
-        type={inputType}
+        type={updatedInputType}
         className={classes}
         defaultValue={value}
         {...register(name)}
@@ -91,6 +97,15 @@ export const InputField = ({
           className={`mr-3 absolute left-14 ${inputFocus ? "tests" : "test"}`}
         >
           {percentage}
+        </span>
+      )}
+
+      {inputType === "password" && (
+        <span
+          className="absolute right-4 cursor-pointer"
+          onClick={() => setShowPassword((prev) => !prev)}
+        >
+          {showPassword ? <OpenEyeIcon /> : <EyeCloseIcon />}{" "}
         </span>
       )}
     </div>

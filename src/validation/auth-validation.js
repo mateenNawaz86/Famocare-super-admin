@@ -5,6 +5,11 @@ export const login = {
   password: "password",
 };
 
+export const newpassword = {
+  newPassword: "newPassword",
+  confirmNewPassword: "confirmNewPassword",
+};
+
 export const forgotpassword = {
   email: "email",
 };
@@ -43,5 +48,14 @@ export const generateSignUpValidationSchema = () => {
 export const generateForgotPasswordValidationSchema = () => {
   return yup.object().shape({
     [forgotpassword.email]: yup.string().required("This field is required"),
+  });
+};
+
+export const generateNewPasswordValidationSchema = () => {
+  return yup.object().shape({
+    [newpassword.newPassword]: yup.string().required("This field is required"),
+    [newpassword.confirmNewPassword]: yup
+      .string()
+      .required("This field is required"),
   });
 };

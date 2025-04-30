@@ -7,7 +7,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { generateOtpValidationSchema } from "../../validation/auth-validation";
 import { PhoneVarificationFormFields } from "../../components/auth/fields/login-fields";
 
-export const usePhoneVerification = ({ onBack }) => {
+export const usePhoneVerification = ({ onBack, onSuccess }) => {
   const navigate = useNavigate();
   const schema = generateOtpValidationSchema();
   const { loading, user } = useSelector((state) => state.auth);
@@ -20,7 +20,7 @@ export const usePhoneVerification = ({ onBack }) => {
     watch,
     formState: { errors },
   } = useForm({
-    resolver: yupResolver(schema),
+    // resolver: yupResolver(schema),
   });
 
   const enteredOtp = watch("otp");
@@ -41,20 +41,20 @@ export const usePhoneVerification = ({ onBack }) => {
 
   const onSubmit = (data) => {
     try {
-      const expectedOtp = user?.user?.otp?.toString();
+      // const expectedOtp = user?.user?.otp?.toString();
+      // if (!expectedOtp) {
+      //   toast.error("No OTP available to verify. Please try again.");
+      //   return;
+      // }
+      // if (enteredOtp === expectedOtp) {
+      //   toast.success("Login successfully!");
+      //   navigate("/dashboard?status=ref-guide");
+      // } else {
+      //   toast.error("Invalid OTP. Please try again.");
+      //   return;
+      // }
 
-      if (!expectedOtp) {
-        toast.error("No OTP available to verify. Please try again.");
-        return;
-      }
-
-      if (enteredOtp === expectedOtp) {
-        toast.success("Login successfully!");
-        navigate("/dashboard?status=ref-guide");
-      } else {
-        toast.error("Invalid OTP. Please try again.");
-        return;
-      }
+      onSuccess();
     } catch (error) {
       console.error("Login error:", error);
     }

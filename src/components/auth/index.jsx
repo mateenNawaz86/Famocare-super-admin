@@ -4,6 +4,7 @@ import { Login } from "./screens/login-screen";
 import { LandingPage } from "./screens/landing-page";
 import { PhoneVarification } from "./screens/phone-verification";
 import { ForgotPassword } from "./screens/forgot-password";
+import { NewPassword } from "./screens/new-password";
 
 export const Auth = () => {
   const [currentScreen, setCurrentScreen] = useState("landing");
@@ -32,6 +33,10 @@ export const Auth = () => {
     setCurrentScreen("forgotPassword");
   };
 
+  const handleNewPassword = () => {
+    setCurrentScreen("newPassword");
+  };
+
   const screens = {
     landing: <LandingPage />,
     login: (
@@ -44,9 +49,14 @@ export const Auth = () => {
       <ForgotPassword onBack={handleBack} onSuccess={handleLoginSuccess} />
     ),
     phone: (
-      <PhoneVarification onBack={handleBack} onSignUp={handleSignupSuccess} />
+      <PhoneVarification onBack={handleBack} onSuccess={handleNewPassword} />
     ),
+    newPassword: <NewPassword onSuccess={handleLoginSuccess} />,
   };
 
-  return <div className="my-[150px]">{screens[currentScreen]}</div>;
+  return (
+    <div className="min-h-screen flex justify-center items-center overflow-hidden">
+      <div className="w-full">{screens[currentScreen]}</div>
+    </div>
+  );
 };

@@ -1,26 +1,27 @@
-import React, { useEffect, useState } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { ModalType } from "../types/ui";
 import { motion } from "framer-motion";
 import logo from "../assets/svgs/logo.svg";
+import React, { useEffect, useState } from "react";
+import { useLocation, Link } from "react-router-dom";
 import { sideBar, staticEnums } from "../utils/static";
-import { DashboardIcon } from "../assets/svgs/components/dashboard-icon";
 import { useDispatch, useSelector } from "react-redux";
-import { updateModalType } from "../api/slices/globalSlice/global";
-import { ModalType } from "../types/ui";
 import { CrossIcon } from "../assets/svgs/components/cross-icon";
-import { ReferralManagersIcon } from "../assets/svgs/components/referral-managers-icon";
+import { GroupsIcon } from "../assets/svgs/components/groups-icon";
+import { updateModalType } from "../api/slices/globalSlice/global";
+import { LogoutIcon } from "../assets/svgs/components/logout-icon";
+import { ProfileIcon } from "../assets/svgs/components/profile-icon";
+import { DashboardIcon } from "../assets/svgs/components/dashboard-icon";
+import { GuideTextIcon } from "../assets/svgs/components/guide-text-icon";
+import { GuideVideoIcon } from "../assets/svgs/components/guide-video-icon";
 import { SupportManagersIcon } from "../assets/svgs/components/support-icon";
 import { VersionControlIcon } from "../assets/svgs/components/version-control";
-import { GuideVideoIcon } from "../assets/svgs/components/guide-video-icon";
-import { GuideTextIcon } from "../assets/svgs/components/guide-text-icon";
-import { GroupsIcon } from "../assets/svgs/components/groups-icon";
 import { PolicyDocumentsIcon } from "../assets/svgs/components/policy-documents-icon";
 import { LimitsManagementIcon } from "../assets/svgs/components/limits-management-icon";
-import { ProfileIcon } from "../assets/svgs/components/profile-icon";
-import { LogoutIcon } from "../assets/svgs/components/logout-icon";
+import { ReferralManagersIcon } from "../assets/svgs/components/referral-managers-icon";
+import { NotificationIcon } from "../assets/svgs/components/notification-icon";
 
 export const svgs = {
-  notifications: <DashboardIcon />,
+  notifications: <NotificationIcon />,
   refManagers: <ReferralManagersIcon />,
   supportManagers: <SupportManagersIcon />,
   versionControls: <VersionControlIcon />,

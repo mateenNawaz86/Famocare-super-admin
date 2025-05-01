@@ -15,7 +15,7 @@ export const Header = ({
     >
       <div className="flex items-center gap-x-5 maxSize:gap-x-0">
         <HambugerIcon onClick={handleDrawer} />
-        <span className="text-[40px] font-bold">{pageTitle}</span>
+        <span className="text-6 font-semibold">{pageTitle}</span>
       </div>
 
       {/* <div className="flex items-center gap-x-4">

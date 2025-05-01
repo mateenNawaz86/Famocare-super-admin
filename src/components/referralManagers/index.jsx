@@ -1,17 +1,15 @@
-import { DetailCards } from "./detail-card";
+import { ReferralManagerFilters } from "./ref-managers-filters";
 import { useEmptyStates } from "../../utils/hooks";
 import { FreeUserCard } from "./mobile/free-user-card";
 import { FreeUsersTableRows } from "./table/table-rows";
 import { FreeUsersTableHeadings } from "./table/table-heading";
-import SelectField from "../../base-component/ui/fields/select-fields";
 import { Pagination } from "../../base-component/ui/pagination/pagination";
-import { NoDataEmptyState } from "../../base-component/ui/loadingEffect/no-data-state";
-import { CustomLoader } from "../../base-component/ui/loadingEffect/custom-loader";
 import { useReferralManagers } from "../../hooks/free-users/useReferralManagers";
+import { CustomLoader } from "../../base-component/ui/loadingEffect/custom-loader";
+import { NoDataEmptyState } from "../../base-component/ui/loadingEffect/no-data-state";
 
 export const ReferralMangers = () => {
   const {
-    dummyData,
     loading,
     itemsPerPage,
     currentPage,
@@ -32,8 +30,7 @@ export const ReferralMangers = () => {
 
   return (
     <>
-      <DetailCards dummyData={dummyData} />
-
+      <ReferralManagerFilters />
       <div className="hidden md:block">
         <FreeUsersTableHeadings
           headings={headings}
@@ -43,7 +40,7 @@ export const ReferralMangers = () => {
         {CurrentComponent}
       </div>
 
-      <div className="flex items-center justify-between mt-[15px] mb-3 md:hidden">
+      {/* <div className="flex items-center justify-between mt-[15px] mb-3 md:hidden">
         <p className="text-[20px] font-semibold min-w-[123px]">User Listing</p>
 
         <SelectField
@@ -61,7 +58,7 @@ export const ReferralMangers = () => {
           ]}
           containerClassName="w-[350px]"
         />
-      </div>
+      </div> */}
 
       {loading ? (
         <div className="flex justify-center items-center md:hidden">

@@ -244,10 +244,10 @@ export const SideBar = ({ isDrawer, handleDrawer }) => {
         </div>
       </div>
 
-      <div className="pl-[32px] pt-[90px] pb-[44px]">
+      <div className="pl-[32px] pt-[236px] pb-[44px]">
         <button
           onClick={handleLogout}
-          className="flex items-center gap-x-[14px] text-[#691188] text-lg font-semibold"
+          className="flex items-center gap-x-[14px] text-newPrimary text-lg font-semibold"
         >
           <LogoutIcon />
           Logout Account

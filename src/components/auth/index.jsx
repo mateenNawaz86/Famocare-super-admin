@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Login } from "./screens/login-screen";
 import { LandingPage } from "./screens/landing-page";
-import { PhoneVarification } from "./screens/phone-verification";
-import { ForgotPassword } from "./screens/forgot-password";
 import { NewPassword } from "./screens/new-password";
+import { ForgotPassword } from "./screens/forgot-password";
+import { PhoneVarification } from "./screens/phone-verification";
 
 export const Auth = () => {
   const [currentScreen, setCurrentScreen] = useState("landing");

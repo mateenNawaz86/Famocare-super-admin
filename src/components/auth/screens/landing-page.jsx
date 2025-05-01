@@ -6,7 +6,7 @@ export const LandingPage = () => {
       <img
         src={logo}
         alt="Logo"
-        className="w-fit h-fit img_loader"
+        className="w-fit h-fit"
         width={120}
         height={100}
       />

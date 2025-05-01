@@ -9,57 +9,26 @@ export function formatDateString(dateString) {
 }
 
 export const getPageTitles = (location) => {
-  const queryParams = new URLSearchParams(location.search);
-  const status = queryParams.get("status");
-
   const pathSegment = location.pathname.split("/")[1];
-  const isMonthly = pathSegment === "monthly-premium-users";
-  const isYearly = pathSegment === "yearly-premium-users";
 
   const titleMap = {
-    trial: isYearly ? "Yearly Trial Users" : "Monthly Trial Users",
-    subscribed: isYearly
-      ? "Yearly Subscribed Users"
-      : "Monthly Subscribed Users",
-    cancelled: isYearly ? "Yearly Cancelled Users" : "Monthly Cancelled Users",
-    "ref-guide": "Referral Guide",
-    "free-users": "Free Users Listing",
-    "my-rewards": "My Rewards",
-    "request-redeem": "Redeem Request",
-    "point-history": "Points History",
-    "coupon-history": "Coupon History",
-    "redeem-history": "Redeem History",
+    "profile-setting": "Profile Settings",
+    notifications: "Push Notification",
+    "referral-managers": "Referral Managers",
+    "support-managers": "Support Managers",
+    "add-support-managers": "Add Support Manager",
+    "version-controls": "Version Control",
+    "add-version-controls": "Add Version",
+    "guide-videos": "Guide Videos",
+    "guide-texts": "Guide Texts",
+    groups: "Groups",
+    "policy-documents": "Policy Documents",
+    "limits-management": "Limits Management",
   };
 
-  let pageTitle = titleMap[status] || titleMap[pathSegment] || "Dashboard";
+  let pageTitle = titleMap[pathSegment] || "Dashboard";
 
-  if (status === "None") {
-    pageTitle = isMonthly
-      ? "Monthly Users"
-      : isYearly
-      ? "Yearly Users"
-      : pageTitle;
-  }
-
-  let mobileHeaderTitle =
-    (isMonthly || isYearly) &&
-    ["trial", "subscribed", "cancelled"].includes(status)
-      ? isMonthly
-        ? "Monthly Premium"
-        : "Yearly Premium"
-      : pageTitle;
-
-  let mobilePageTitle =
-    (isMonthly || isYearly) &&
-    ["trial", "subscribed", "cancelled"].includes(status)
-      ? status === "trial"
-        ? "Trial Users"
-        : status === "subscribed"
-        ? "Subscribed Users"
-        : "Cancelled Users"
-      : pageTitle;
-
-  return { pageTitle, mobileHeaderTitle, mobilePageTitle };
+  return { pageTitle };
 };
 
 export function isJSON(str) {

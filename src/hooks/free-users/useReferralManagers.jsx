@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { readFreeUserListing } from "../../api/slices/freeUserSlice/freeUser";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { FiltersDefaultValues } from "../../utils/static";
+import profile from "../../assets/pngs/profile.jpg";
 
 export const useReferralManagers = () => {
   const dispatch = useDispatch();
@@ -122,12 +123,85 @@ export const useReferralManagers = () => {
     });
   };
 
+  const dummyRecords = [
+    {
+      img: profile,
+      name: "John Doe",
+      userId: "@john.doe",
+      email: "john.doe@example.com",
+      status: "Active",
+    },
+    {
+      img: profile,
+      name: "Jane Smith",
+      userId: "@jane.smith",
+      email: "jane.smith@example.com",
+      status: "Active",
+    },
+    {
+      img: profile,
+      name: "Michael Johnson",
+      userId: "@michael.j",
+      email: "michael.johnson@example.com",
+      status: "Block",
+    },
+    {
+      img: profile,
+      name: "Emily Davis",
+      userId: "@emily.d",
+      email: "emily.davis@example.com",
+      status: "Active",
+    },
+    {
+      img: profile,
+      name: "Chris Lee",
+      userId: "@chris.lee",
+      email: "chris.lee@example.com",
+      status: "Block",
+    },
+    {
+      img: profile,
+      name: "Sarah Brown",
+      userId: "@sarah.brown",
+      email: "sarah.brown@example.com",
+      status: "Active",
+    },
+    {
+      img: profile,
+      name: "David Wilson",
+      userId: "@david.wilson",
+      email: "david.wilson@example.com",
+      status: "Block",
+    },
+    {
+      img: profile,
+      name: "Laura Martinez",
+      userId: "@laura.m",
+      email: "laura.martinez@example.com",
+      status: "Active",
+    },
+    {
+      img: profile,
+      name: "James Anderson",
+      userId: "@james.a",
+      email: "james.anderson@example.com",
+      status: "Block",
+    },
+    {
+      img: profile,
+      name: "Olivia Thomas",
+      userId: "@olivia.t",
+      email: "olivia.thomas@example.com",
+      status: "Block",
+    },
+  ];
+
   return {
     dummyData,
     currentPageRows,
     totalItems,
     totalCount,
-    loading,
+    loading: false,
     itemsPerPage,
     handlePageChange,
     currentPage,
@@ -136,5 +210,6 @@ export const useReferralManagers = () => {
     hanldeSortChange,
     sort,
     filter,
+    dummyRecords,
   };
 };

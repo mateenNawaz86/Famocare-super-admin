@@ -8,6 +8,7 @@ export const TableHeading = ({
   handleSort,
   currentSort,
   isRedeem,
+  isStatus,
 }) => {
   const isClickable = title !== "Status" || (isRedeem && title === "Status");
 
@@ -20,7 +21,11 @@ export const TableHeading = ({
   return (
     <div
       className={`flex items-center gap-x-1.5  ${
-        isAligned ? (isFirst ? "justify-start" : "justify-center") : ""
+        isAligned
+          ? isFirst || isStatus
+            ? "justify-start"
+            : "justify-center"
+          : ""
       }`}
     >
       <span
@@ -28,7 +33,7 @@ export const TableHeading = ({
         className={` ${
           isClickable ? "cursor-pointer" : "cursor-default"
         } text-base font-medium ${
-          currentSort === value ? "text-primary" : "text-gray-500"
+          currentSort === value ? "text-newpreimary" : "text-gray-500"
         }`}
       >
         {title}

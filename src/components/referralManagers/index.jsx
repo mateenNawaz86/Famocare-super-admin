@@ -20,10 +20,11 @@ export const ReferralMangers = () => {
     totalCount,
     sort,
     hanldeSortChange,
+    dummyRecords,
   } = useReferralManagers();
 
   const CurrentComponent = useEmptyStates(
-    <ReferralManagersTableRows data={currentPageRows?.data?.freeUsers} />,
+    <ReferralManagersTableRows data={dummyRecords} />,
     totalCount !== 0,
     loading
   );

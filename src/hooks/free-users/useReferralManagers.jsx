@@ -32,9 +32,11 @@ export const useReferralManagers = () => {
   ];
 
   const headings = [
-    { label: "User details", value: "name" },
-    { label: "Installed", value: "installedDate" },
-    { label: "Status", value: "status" },
+    { label: "Users", value: "users" },
+    { label: "User Id", value: "userId" },
+    { label: "Email", value: "email" },
+    { label: "Action", value: "action" },
+    { label: "Action", value: "action" },
   ];
 
   const totalCount = currentPageRows?.pagination?.totalRecords;

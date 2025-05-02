@@ -1,12 +1,12 @@
 import { ReferralManagerFilters } from "./ref-managers-filters";
 import { useEmptyStates } from "../../utils/hooks";
 import { FreeUserCard } from "./mobile/free-user-card";
-import { FreeUsersTableRows } from "./table/table-rows";
 import { FreeUsersTableHeadings } from "./table/table-heading";
 import { Pagination } from "../../base-component/ui/pagination/pagination";
 import { useReferralManagers } from "../../hooks/free-users/useReferralManagers";
 import { CustomLoader } from "../../base-component/ui/loadingEffect/custom-loader";
 import { NoDataEmptyState } from "../../base-component/ui/loadingEffect/no-data-state";
+import { ReferralManagersTableRows } from "./table/table-rows";
 
 export const ReferralMangers = () => {
   const {
@@ -23,7 +23,7 @@ export const ReferralMangers = () => {
   } = useReferralManagers();
 
   const CurrentComponent = useEmptyStates(
-    <FreeUsersTableRows data={currentPageRows?.data?.freeUsers} />,
+    <ReferralManagersTableRows data={currentPageRows?.data?.freeUsers} />,
     totalCount !== 0,
     loading
   );
@@ -31,7 +31,7 @@ export const ReferralMangers = () => {
   return (
     <>
       <ReferralManagerFilters />
-      <div className="hidden md:block">
+      <div className="mt-5 bg-white rounded-[14px] border border-[#e0e0e0] py-5 px-[30px]">
         <FreeUsersTableHeadings
           headings={headings}
           handleSort={hanldeSortChange}

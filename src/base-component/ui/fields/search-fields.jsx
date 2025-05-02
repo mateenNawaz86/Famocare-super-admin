@@ -88,11 +88,27 @@ const InputField = forwardRef(
           )} */}
 
           <div
-            className="px-[30px] py-[10px] bg-newPreimary rounded-tr-md rounded-br-md cursor-pointer"
+            className={`px-[30px] py-[10px] bg-newPreimary rounded-tr-md rounded-br-md cursor-pointer `}
             onClick={handleSearchClick}
           >
             <SearchIcon />
           </div>
+
+          {/* <div
+            className={combineClasses(
+              `px-[30px] py-[10px] rounded-tr-md rounded-br-md`,
+              localValue.trim()
+                ? "bg-newPreimary cursor-pointer"
+                : "bg-gray-300 cursor-not-allowed"
+            )}
+            onClick={() => {
+              if (localValue.trim()) {
+                handleSearchClick();
+              }
+            }}
+          >
+            <SearchIcon />
+          </div> */}
         </div>
       </div>
     );

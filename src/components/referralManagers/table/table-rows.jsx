@@ -1,13 +1,13 @@
 import profile from "../../../assets/pngs/profile.jpg";
 import { formatDate } from "../../../utils/function";
 
-export const FreeUsersTableRows = ({ data }) => {
+export const ReferralManagersTableRows = ({ data }) => {
   return (
     <div className={`overflow-y-visible flex flex-col gap-y-[10px]`}>
       {data?.map((item, index) => (
         <div
           key={index}
-          className="bg-white hover:bg-tableHoverColor rounded-[5px] py-[10px] px-[15px] grid grid-cols-[minmax(200px,_4fr)_minmax(170px,_3fr)_minmax(100px,_100px)] items-center"
+          className="bg-white hover:bg-tableHoverColor rounded-[5px] py-[10px] px-[15px] grid grid-cols-[minmax(150px,_3fr)_minmax(100px,_3fr)_minmax(120px,_3fr)_minmax(120px,_120px)_minmax(100px,_100px)] items-center"
         >
           <div className="flex items-center gap-x-[18px]">
             <img

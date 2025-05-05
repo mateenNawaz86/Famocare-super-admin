@@ -9,7 +9,7 @@ export const PageNumber = ({ currentPage, pageNumber, handlePageClick }) => {
       handlePageClick={() => handlePageClick(pageNumber)}
       className={getButtonClass(
         currentPage === pageNumber,
-        "bg-primary text-white",
+        "bg-newPreimary text-white",
         "hover:bg-gray-200"
       )}
     />

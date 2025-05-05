@@ -11,9 +11,7 @@ export const ReferralMangers = () => {
     itemsPerPage,
     currentPage,
     headings,
-    currentPageRows,
     handlePageChange,
-    freeUser,
     totalCount,
     sort,
     hanldeSortChange,
@@ -77,14 +75,14 @@ export const ReferralMangers = () => {
       )} */}
 
       {!loading && (
-        <div className="hidden md:block">
-          <Pagination
-            totalItems={itemsPerPage}
-            itemsPerPage={itemsPerPage}
-            onPageChange={handlePageChange}
-            currentPage={currentPage}
-          />
-        </div>
+        // <div className="hidden md:block">
+        <Pagination
+          totalItems={itemsPerPage}
+          itemsPerPage={itemsPerPage}
+          onPageChange={handlePageChange}
+          currentPage={currentPage}
+        />
+        // </div>
       )}
     </>
   );

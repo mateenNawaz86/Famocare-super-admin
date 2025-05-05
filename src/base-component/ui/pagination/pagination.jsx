@@ -30,7 +30,7 @@ export const Pagination = React.memo(
     });
 
     const combineContainerClass = combineClasses(
-      "flex justify-end gap-x-2 mt-[18px]",
+      "flex justify-end  mt-[18px]",
       containerClassName
     );
 
@@ -38,7 +38,7 @@ export const Pagination = React.memo(
       <div className={combineContainerClass}>
         <PaginationItem
           handlePageClick={handlePrevClick}
-          icon="<"
+          icon="Previous"
           className={getButtonClass(
             isFirst,
             "cursor-not-allowed opacity-50",
@@ -75,11 +75,11 @@ export const Pagination = React.memo(
 
         <PaginationItem
           handlePageClick={handleNextClick}
-          icon=">"
+          icon="Next"
           className={getButtonClass(
             isLast,
             "cursor-not-allowed opacity-50",
-            "hover:bg-gray-200"
+            "hover:bg-newPreimary hover:text-white"
           )}
           disabled={isLast}
         />

@@ -1,5 +1,6 @@
 import profile from "../../../assets/pngs/profile.jpg";
 import { ThreeDotsIcon } from "../../../assets/svgs/components/three-dots-icon";
+import MoreField from "../../../base-component/ui/fields/more-fields";
 
 export const ReferralManagersTableRows = ({ data }) => {
   return (
@@ -31,10 +32,20 @@ export const ReferralManagersTableRows = ({ data }) => {
           >
             <span className="text-base font-medium">{item?.status}</span>
           </div>
-          <div className={`flex items-center justify-end gap-x-[14px]`}>
+          {/* <div className={`flex items-center justify-end gap-x-[14px]`}>
             <span className="text-base font-medium">More</span>
             <ThreeDotsIcon />
-          </div>
+          </div> */}
+
+          <MoreField
+            handleChange={(value) => console.log("Selected action:", value)}
+            options={[
+              { label: "Edit", value: "edit" },
+              { label: "Delete", value: "delete" },
+              { label: "Block", value: "block" },
+            ]}
+            containerClassName="w-[120px] flex justify-end"
+          />
         </div>
       ))}
     </div>

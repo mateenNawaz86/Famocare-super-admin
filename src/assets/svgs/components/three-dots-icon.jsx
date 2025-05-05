@@ -6,6 +6,7 @@ export const ThreeDotsIcon = ({ iconClassName = "#000" }) => {
       viewBox="0 0 6 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="cursor-pointer"
     >
       <path
         d="M3 12.25C4.24264 12.25 5.25 11.2426 5.25 10C5.25 8.75736 4.24264 7.75 3 7.75C1.75736 7.75 0.75 8.75736 0.75 10C0.75 11.2426 1.75736 12.25 3 12.25Z"

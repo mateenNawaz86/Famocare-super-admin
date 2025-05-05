@@ -4,7 +4,7 @@ import { combineClasses } from "../../../utils/utility";
 export const PaginationItem = React.memo(
   ({ handlePageClick, icon, className, disabled }) => {
     const defaultClasses =
-      "w-10 h-10 rounded-full text-gray font-semibold bg-white mb-7 border border-[#E0E0E0]";
+      "py-2 px-[14px] text-gray font-semibold bg-white text-[#828282] mb-10 border border-[#bdbdbd]";
     const buttonClasses = combineClasses(defaultClasses, className);
 
     return (

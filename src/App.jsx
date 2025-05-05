@@ -8,6 +8,7 @@ import { ToastContainer } from "react-toastify";
 import { ReferralManagersPage } from "./pages/referralManagers";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { ProfileSettingPage } from "./pages/profileSetting";
+import { SupportManagersPage } from "./pages/supportManagers";
 
 const App = () => {
   const location = useLocation();
@@ -44,6 +45,11 @@ const App = () => {
           path="/profile-setting"
           // element={<PrivateRoute element={<ReferralManagersPage />} />}
           element={<ProfileSettingPage />}
+        />
+        <Route
+          path="/support-managers"
+          // element={<PrivateRoute element={<ReferralManagersPage />} />}
+          element={<SupportManagersPage />}
         />
       </Routes>
     </>

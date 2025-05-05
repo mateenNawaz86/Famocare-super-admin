@@ -1,6 +1,6 @@
 import { TableHeading } from "../../../base-component/ui/table-heading";
 
-export const ReferralManagersTableHeadings = ({
+export const SupportManagersTableHeadings = ({
   headings,
   handleSort,
   sortValue,

@@ -1,7 +1,7 @@
 import profile from "../../../assets/pngs/profile.jpg";
 import { ThreeDotsIcon } from "../../../assets/svgs/components/three-dots-icon";
 
-export const ReferralManagersTableRows = ({ data }) => {
+export const SupportManagersTableRows = ({ data }) => {
   return (
     <div className={`overflow-y-visible flex flex-col gap-y-[10px] mt-[10px]`}>
       {data?.map((item, index) => (

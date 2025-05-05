@@ -1,6 +1,6 @@
 import { Form } from "../../base-component/form/form";
 import { BackIcon } from "../../assets/svgs/components/back-icon";
-import { useProfileSetting } from "../../hooks/profileSetting/useProfileSetting";
+import { useProfileSetting } from "../../hooks/profile-setting/useProfileSetting";
 
 export const ProfileSetting = () => {
   const { handleSubmit, errors, fields, onSubmit } = useProfileSetting();

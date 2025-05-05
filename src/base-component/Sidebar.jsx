@@ -10,7 +10,6 @@ import { GroupsIcon } from "../assets/svgs/components/groups-icon";
 import { updateModalType } from "../api/slices/globalSlice/global";
 import { LogoutIcon } from "../assets/svgs/components/logout-icon";
 import { ProfileIcon } from "../assets/svgs/components/profile-icon";
-import { DashboardIcon } from "../assets/svgs/components/dashboard-icon";
 import { GuideTextIcon } from "../assets/svgs/components/guide-text-icon";
 import { GuideVideoIcon } from "../assets/svgs/components/guide-video-icon";
 import { SupportManagersIcon } from "../assets/svgs/components/support-icon";

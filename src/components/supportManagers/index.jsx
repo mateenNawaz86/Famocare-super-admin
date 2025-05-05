@@ -1,36 +1,34 @@
 import { useEmptyStates } from "../../utils/hooks";
-import { ReferralManagersTableRows } from "./table/table-rows";
-import { ReferralManagerFilters } from "./ref-managers-filters";
-import { ReferralManagersTableHeadings } from "./table/table-heading";
+import { SupportManagersTableRows } from "./table/table-rows";
+import { SupportManagerFilters } from "./support-managers-filters";
+import { SupportManagersTableHeadings } from "./table/table-heading";
 import { Pagination } from "../../base-component/ui/pagination/pagination";
-import { useReferralManagers } from "../../hooks/referral-managers/useReferralManagers";
+import { useSupportManagers } from "../../hooks/support-managers/useSupportManagers";
 
-export const ReferralMangers = () => {
+export const SupportMangers = () => {
   const {
     loading,
     itemsPerPage,
     currentPage,
     headings,
-    currentPageRows,
     handlePageChange,
-    freeUser,
     totalCount,
     sort,
     hanldeSortChange,
     dummyRecords,
-  } = useReferralManagers();
+  } = useSupportManagers();
 
   const CurrentComponent = useEmptyStates(
-    <ReferralManagersTableRows data={dummyRecords} />,
+    <SupportManagersTableRows data={dummyRecords} />,
     totalCount !== 0,
     loading
   );
 
   return (
     <>
-      <ReferralManagerFilters />
+      <SupportManagerFilters />
       <div className="mt-5 bg-white rounded-[14px] border border-[#e0e0e0] py-5 px-[30px]">
-        <ReferralManagersTableHeadings
+        <SupportManagersTableHeadings
           headings={headings}
           handleSort={hanldeSortChange}
           sortValue={sort}

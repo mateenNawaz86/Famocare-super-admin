@@ -36,7 +36,7 @@ export const useReferralManagers = () => {
     { label: "Users", value: "users" },
     { label: "User Id", value: "userId" },
     { label: "Email", value: "email" },
-    { label: "Action", value: "action" },
+    { label: "Status", value: "status" },
     { label: "Action", value: "action" },
   ];
 

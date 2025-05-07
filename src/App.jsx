@@ -9,6 +9,8 @@ import { ReferralManagersPage } from "./pages/referralManagers";
 import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { ProfileSettingPage } from "./pages/profileSetting";
 import { SupportManagersPage } from "./pages/supportManagers";
+import { AddSupportManagersPage } from "./pages/supportManagers/add-support-manager";
+import { AddReferralManagersPage } from "./pages/referralManagers/add-referral-manager";
 
 const App = () => {
   const location = useLocation();
@@ -42,6 +44,11 @@ const App = () => {
           element={<ReferralManagersPage />}
         />
         <Route
+          path="/referral-managers/add-referral-manager"
+          // element={<PrivateRoute element={<ReferralManagersPage />} />}
+          element={<AddReferralManagersPage />}
+        />
+        <Route
           path="/profile-setting"
           // element={<PrivateRoute element={<ReferralManagersPage />} />}
           element={<ProfileSettingPage />}
@@ -50,6 +57,11 @@ const App = () => {
           path="/support-managers"
           // element={<PrivateRoute element={<ReferralManagersPage />} />}
           element={<SupportManagersPage />}
+        />
+        <Route
+          path="/support-managers/add-support-manager"
+          // element={<PrivateRoute element={<ReferralManagersPage />} />}
+          element={<AddSupportManagersPage />}
         />
       </Routes>
     </>

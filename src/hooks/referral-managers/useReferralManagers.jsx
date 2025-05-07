@@ -2,13 +2,14 @@ import { useState, useEffect } from "react";
 import { getPageFromURL } from "../../utils/utility";
 import { useDispatch, useSelector } from "react-redux";
 import { readFreeUserListing } from "../../api/slices/freeUserSlice/freeUser";
-import { useLocation, useSearchParams } from "react-router-dom";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { FiltersDefaultValues } from "../../utils/static";
 import profile from "../../assets/pngs/profile.jpg";
 
 export const useReferralManagers = () => {
   const dispatch = useDispatch();
   const location = useLocation();
+  const navigate = useNavigate();
   const { user, loading: authLoading } = useSelector((state) => state.auth);
   const [currentPageRows, setCurrentPageRows] = useState([]);
   const [currentPage, setCurrentPage] = useState(getPageFromURL());
@@ -123,6 +124,10 @@ export const useReferralManagers = () => {
     });
   };
 
+  const handleAddReferralManager = () => {
+    navigate("/referral-managers/add-referral-manager", { replace: true });
+  };
+
   const dummyRecords = [
     {
       img: profile,
@@ -211,5 +216,6 @@ export const useReferralManagers = () => {
     sort,
     filter,
     dummyRecords,
+    handleAddReferralManager,
   };
 };

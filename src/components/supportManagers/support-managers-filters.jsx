@@ -5,7 +5,7 @@ import { LinkButton } from "../../base-component/ui/button/link-icon";
 import InputField from "../../base-component/ui/fields/search-fields";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 
-export const SupportManagerFilters = () => {
+export const SupportManagerFilters = ({ onAddSupportManager }) => {
   const inputRef = useRef(null);
   const [inputValue, setInputValue] = useState("");
   const navigate = useNavigate();
@@ -42,7 +42,7 @@ export const SupportManagerFilters = () => {
     <div className="flex items-center justify-between">
       <LinkButton
         text="Add Support Manager"
-        onClick={() => {}}
+        onClick={onAddSupportManager}
         icon={PlusIcon}
         containerClassName="bg-newPreimary text-white rounded-md py-2 px-3 text-sm font-semibold md:gap-x-2"
       />

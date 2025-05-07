@@ -5,11 +5,11 @@ import InputField from "../../base-component/ui/fields/search-fields";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { FiltersDefaultValues } from "../../utils/static";
 
-export const ReferralManagerFilters = () => {
+export const ReferralManagerFilters = ({ onAddReferralManager }) => {
   const inputRef = useRef(null);
-  const [inputValue, setInputValue] = useState("");
   const navigate = useNavigate();
   const location = useLocation(0);
+  const [inputValue, setInputValue] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
 
   const handleInputChange = (value) => {
@@ -42,7 +42,7 @@ export const ReferralManagerFilters = () => {
     <div className="flex items-center justify-between">
       <LinkButton
         text="Add Referral Manager"
-        onClick={() => {}}
+        onClick={onAddReferralManager}
         icon={PlusIcon}
         containerClassName="bg-newPreimary text-white rounded-md py-2 px-3 text-sm font-semibold md:gap-x-2"
       />

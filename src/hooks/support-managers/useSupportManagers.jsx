@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
 import { getPageFromURL } from "../../utils/utility";
 import { useDispatch, useSelector } from "react-redux";
-import { readFreeUserListing } from "../../api/slices/freeUserSlice/freeUser";
-import { useLocation, useSearchParams } from "react-router-dom";
 import { FiltersDefaultValues } from "../../utils/static";
 import profile from "../../assets/pngs/profile.jpg";
+import { readFreeUserListing } from "../../api/slices/freeUserSlice/freeUser";
+import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 
 export const useSupportManagers = () => {
   const dispatch = useDispatch();
   const location = useLocation();
+  const navigate = useNavigate();
   const { user, loading: authLoading } = useSelector((state) => state.auth);
   const [currentPageRows, setCurrentPageRows] = useState([]);
   const [currentPage, setCurrentPage] = useState(getPageFromURL());
@@ -123,6 +124,10 @@ export const useSupportManagers = () => {
     });
   };
 
+  const handleAddSupportManager = () => {
+    navigate("/support-managers/add-support-manager", { replace: true });
+  };
+
   const dummyRecords = [
     {
       img: profile,
@@ -211,5 +216,6 @@ export const useSupportManagers = () => {
     sort,
     filter,
     dummyRecords,
+    handleAddSupportManager,
   };
 };

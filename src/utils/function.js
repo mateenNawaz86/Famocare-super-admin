@@ -9,14 +9,16 @@ export function formatDateString(dateString) {
 }
 
 export const getPageTitles = (location) => {
-  const pathSegment = location.pathname.split("/")[1];
+  const pathSegments = location.pathname.split("/").filter(Boolean); // removes empty segments
+  const lastSegment = pathSegments[pathSegments.length - 1]; // get last segment
 
   const titleMap = {
     "profile-setting": "Profile Settings",
     notifications: "Push Notification",
     "referral-managers": "Referral Managers",
     "support-managers": "Support Managers",
-    "add-support-managers": "Add Support Manager",
+    "add-support-manager": "Add Support Manager",
+    "add-referral-manager": "Add Referral Manager",
     "version-controls": "Version Control",
     "add-version-controls": "Add Version",
     "guide-videos": "Guide Videos",
@@ -26,7 +28,7 @@ export const getPageTitles = (location) => {
     "limits-management": "Limits Management",
   };
 
-  let pageTitle = titleMap[pathSegment] || "Dashboard";
+  let pageTitle = titleMap[lastSegment] || "Dashboard";
 
   return { pageTitle };
 };

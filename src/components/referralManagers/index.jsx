@@ -16,6 +16,7 @@ export const ReferralMangers = () => {
     sort,
     hanldeSortChange,
     dummyRecords,
+    handleAddReferralManager,
   } = useReferralManagers();
 
   const CurrentComponent = useEmptyStates(
@@ -26,7 +27,7 @@ export const ReferralMangers = () => {
 
   return (
     <>
-      <ReferralManagerFilters />
+      <ReferralManagerFilters onAddReferralManager={handleAddReferralManager} />
       <div className="mt-5 bg-white rounded-[14px] border border-[#e0e0e0] py-5 px-[30px]">
         <ReferralManagersTableHeadings
           headings={headings}

@@ -16,6 +16,7 @@ export const SupportMangers = () => {
     sort,
     hanldeSortChange,
     dummyRecords,
+    handleAddSupportManager,
   } = useSupportManagers();
 
   const CurrentComponent = useEmptyStates(
@@ -26,7 +27,7 @@ export const SupportMangers = () => {
 
   return (
     <>
-      <SupportManagerFilters />
+      <SupportManagerFilters onAddSupportManager={handleAddSupportManager} />
       <div className="mt-5 bg-white rounded-[14px] border border-[#e0e0e0] py-5 px-[30px]">
         <SupportManagersTableHeadings
           headings={headings}

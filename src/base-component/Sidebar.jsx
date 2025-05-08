@@ -126,8 +126,8 @@ export const SideBar = ({ isDrawer, handleDrawer }) => {
                     onClick={() => routeChangeHandler(item)}
                     className={`rounded-lg flex justify-between items-center p-4 w-full break-all ${
                       selected.parent.title === item.title
-                        ? "bg-newPreimary hover:bg-[#691188]"
-                        : "hover:bg-[#E9E1FF]"
+                        ? "bg-newPreimary"
+                        : ""
                     }`}
                   >
                     <div className="flex items-center gap-x-3">
@@ -226,8 +226,8 @@ export const SideBar = ({ isDrawer, handleDrawer }) => {
                                     new URLSearchParams(location.search).get(
                                       "status"
                                     ) === it.query
-                                      ? "bg-[#691188] hover:bg-[#691188] text-white"
-                                      : "hover:bg-[#E9E1FF]"
+                                      ? "bg-[#691188] text-white"
+                                      : ""
                                   }`}
                                 >
                                   {it.title}

@@ -29,7 +29,7 @@ export const sideBar = [
   {
     icon: "versionControls",
     title: "Version Control",
-    pathname: "/version-controls",
+    pathname: "/version-control",
     role: [0],
   },
   {

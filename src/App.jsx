@@ -9,6 +9,7 @@ import { SupportManagersPage } from "./pages/supportManagers";
 import { AddSupportManagersPage } from "./pages/supportManagers/add-support-manager";
 import { AddReferralManagersPage } from "./pages/referralManagers/add-referral-manager";
 import { VersionControlPage } from "./pages/versionControl";
+import { AddVersionControlPage } from "./pages/versionControl/add-version-control";
 
 const App = () => {
   const location = useLocation();
@@ -25,16 +26,20 @@ const App = () => {
         <Route path="/" element={<AuthPage />} />
         <Route path="/referral-managers" element={<ReferralManagersPage />} />
         <Route
-          path="/referral-managers/add-referral-manager"
+          path="/add-referral-manager"
           element={<AddReferralManagersPage />}
         />
         <Route path="/profile-setting" element={<ProfileSettingPage />} />
         <Route path="/support-managers" element={<SupportManagersPage />} />
         <Route
-          path="/support-managers/add-support-manager"
+          path="/add-support-manager"
           element={<AddSupportManagersPage />}
         />
         <Route path="/version-control" element={<VersionControlPage />} />
+        <Route
+          path="/add-version-control"
+          element={<AddVersionControlPage />}
+        />
       </Routes>
     </>
   );

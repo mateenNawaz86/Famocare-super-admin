@@ -125,7 +125,7 @@ export const useReferralManagers = () => {
   };
 
   const handleAddReferralManager = () => {
-    navigate("/referral-managers/add-referral-manager", { replace: true });
+    navigate("/add-referral-manager");
   };
 
   const dummyRecords = [
@@ -217,5 +217,6 @@ export const useReferralManagers = () => {
     filter,
     dummyRecords,
     handleAddReferralManager,
+    navigate,
   };
 };

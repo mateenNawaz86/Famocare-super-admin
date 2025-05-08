@@ -2,9 +2,9 @@ import { useEmptyStates } from "../../utils/hooks";
 import { ReferralManagersTableRows } from "./table/table-rows";
 import { ReferralManagersTableHeadings } from "./table/table-heading";
 import { Pagination } from "../../base-component/ui/pagination/pagination";
-import { useReferralManagers } from "../../hooks/referral-managers/useReferralManagers";
 import { CommonFilters } from "../../base-component/ui/filters";
 import { useState } from "react";
+import { useVersionControl } from "../../hooks/versionControl/useVersionControl";
 
 export const VersionControl = () => {
   const {
@@ -17,8 +17,8 @@ export const VersionControl = () => {
     sort,
     hanldeSortChange,
     dummyRecords,
-    handleAddReferralManager,
-  } = useReferralManagers();
+    handleAddVersionControl,
+  } = useVersionControl();
 
   const [renderComponent, setRenderComponent] = useState(true);
   const [activeTab, setActiveTab] = useState("android");
@@ -36,10 +36,7 @@ export const VersionControl = () => {
 
   return (
     <>
-      <CommonFilters
-        onAddReferralManager={handleAddReferralManager}
-        buttonText="Add Version"
-      />
+      <CommonFilters onAdd={handleAddVersionControl} buttonText="Add Version" />
 
       <div className="flex items-center mt-10">
         <div

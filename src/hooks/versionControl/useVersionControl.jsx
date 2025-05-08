@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { getPageFromURL } from "../../utils/utility";
 import { useDispatch, useSelector } from "react-redux";
-import { FiltersDefaultValues } from "../../utils/static";
-import profile from "../../assets/pngs/profile.jpg";
 import { readFreeUserListing } from "../../api/slices/freeUserSlice/freeUser";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import { FiltersDefaultValues } from "../../utils/static";
+import profile from "../../assets/pngs/profile.jpg";
 
-export const useSupportManagers = () => {
+export const useVersionControl = () => {
   const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
@@ -124,8 +124,8 @@ export const useSupportManagers = () => {
     });
   };
 
-  const handleAddSupportManager = () => {
-    navigate("/add-support-manager");
+  const handleAddVersionControl = () => {
+    navigate("/add-version-control", { replace: true });
   };
 
   const dummyRecords = [
@@ -216,6 +216,6 @@ export const useSupportManagers = () => {
     sort,
     filter,
     dummyRecords,
-    handleAddSupportManager,
+    handleAddVersionControl,
   };
 };

@@ -5,7 +5,7 @@ import InputField from "./fields/search-fields";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { FiltersDefaultValues } from "../../utils/static";
 
-export const CommonFilters = ({ onAddReferralManager, buttonText }) => {
+export const CommonFilters = ({ onAdd, buttonText }) => {
   const inputRef = useRef(null);
   const navigate = useNavigate();
   const location = useLocation(0);
@@ -19,10 +19,8 @@ export const CommonFilters = ({ onAddReferralManager, buttonText }) => {
 
     if (value) {
       updatedParams.set("text", value);
-      updatedParams.set("page", "1");
     } else {
       updatedParams.delete("text");
-      updatedParams.delete("page");
     }
 
     navigate(`${location.pathname}?${updatedParams.toString()}`, {
@@ -41,7 +39,7 @@ export const CommonFilters = ({ onAddReferralManager, buttonText }) => {
     <div className="flex items-center justify-between">
       <LinkButton
         text={buttonText}
-        onClick={onAddReferralManager}
+        onClick={onAdd}
         containerClassName="bg-newPreimary text-white rounded-md py-2 px-3 text-sm font-semibold md:gap-x-2"
       />
 

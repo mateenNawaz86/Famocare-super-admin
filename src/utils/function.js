@@ -20,7 +20,7 @@ export const getPageTitles = (location) => {
     "add-support-manager": "Add Support Manager",
     "add-referral-manager": "Add Referral Manager",
     "version-control": "Version Control",
-    "add-version-controls": "Add Version",
+    "add-version-control": "Add Version",
     "guide-videos": "Guide Videos",
     "guide-texts": "Guide Texts",
     groups: "Groups",

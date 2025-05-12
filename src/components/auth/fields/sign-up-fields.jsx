@@ -59,7 +59,7 @@ export const SignUpFormFields = (register, loading, control) => {
         id: "button",
         text: "Set up Profile",
         inputType: "submit",
-        className: "rounded-xl w-full h-[50px] hover:bg-none",
+        className: "rounded-xl w-full h-[50px]",
         loading,
       },
     },

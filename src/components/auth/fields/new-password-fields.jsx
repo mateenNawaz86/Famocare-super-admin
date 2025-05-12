@@ -43,7 +43,7 @@ export const NewPasswordFormFields = (register, loading, onForgotPassword) => {
         text: "Confirm",
         inputType: "submit",
         className:
-          "rounded-[6px] md:w-[309px] h-[42px] hover:bg-none bg-[#055860] font-bold",
+          "rounded-[6px] md:w-[309px] h-[42px] bg-[#055860] font-bold",
         loading,
       },
     },

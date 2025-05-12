@@ -115,8 +115,7 @@ export const ProfileSettingFormFields = (register, loading, control) => {
         id: "button",
         text: "Confirm",
         inputType: "submit",
-        className:
-          "rounded-[6px] bg-[#055860] w-[309px] h-[50px] hover:bg-none",
+        className: "rounded-[6px] bg-[#055860] w-[309px] h-[50px]",
         loading,
       },
     },

@@ -105,7 +105,7 @@ export const SelectBox = ({
             transition={{ duration: 0.4 }}
             className="select_scrollbar absolute overflow-x-hidden top-[56px] max-h-[180px] h-fit overflow-scroll w-full bg-white border border-lightGray rounded-br-lg rounded-bl-lg rounded-lg z-10"
           >
-            <div className="flex items-center border border-borderColor rounded-md m-2">
+            {/* <div className="flex items-center border border-borderColor rounded-md m-2">
               <img
                 src={searchIcon}
                 alt="Search"
@@ -118,7 +118,7 @@ export const SelectBox = ({
                 placeholder="Search"
                 className="w-full ps-6 focus:outline-primary focus:outline rounded-md p-2 placeholder:text-sm bg-[#f6f6f7]"
               />
-            </div>
+            </div> */}
             {displayedOptions?.length === 0 ? (
               <p className="text-sm text-center text-[#BB060B] mb-2">
                 {"No Match Data"}

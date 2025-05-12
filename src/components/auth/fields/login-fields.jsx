@@ -48,7 +48,7 @@ export const LoginContactFormFields = (
         text: "Login",
         inputType: "submit",
         className:
-          "rounded-[6px] md:w-[309px] h-[42px] hover:bg-none bg-[#055860] font-bold",
+          "rounded-[6px] md:w-[309px] h-[42px] bg-[#055860] font-bold",
         loading,
       },
     },
@@ -97,7 +97,7 @@ export const PhoneVarificationFormFields = (
         text: "Send",
         inputType: "submit",
         className:
-          "rounded-[6px] md:w-[309px] h-[42px] hover:bg-none bg-[#055860] font-bold",
+          "rounded-[6px] md:w-[309px] h-[42px] bg-[#055860] font-bold",
         loading,
       },
     },
@@ -110,7 +110,7 @@ export const PhoneVarificationFormFields = (
         text: "RESEND CODE",
         inputType: "button",
         onClick: onBack,
-        className: "bg-none w-fit hover:bg-none text-primary ",
+        className: "bg-none w-fit text-primary",
         loading,
       },
     },

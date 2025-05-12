@@ -6,7 +6,7 @@ export const ReferralManagersTableHeadings = ({
   sortValue,
 }) => {
   return (
-    <div className="grid gap-x-2 grid-cols-[minmax(150px,_3fr)_minmax(100px,_3fr)_minmax(120px,_3fr)_minmax(100px,_100px)_minmax(120px,_120px)] px-3">
+    <div className="grid gap-x-2 grid-cols-[minmax(50px,_50px)_minmax(150px,_150px)_minmax(150px,_3fr)_minmax(150px,_150px)_minmax(120px,_120px)] px-3">
       {headings?.map((heading, index) => (
         <TableHeading
           key={heading.value}

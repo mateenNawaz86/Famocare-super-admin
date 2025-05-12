@@ -16,7 +16,7 @@ export const Layout = ({ children }) => {
     window.matchMedia("(min-width:1280px)").matches
   );
 
-  const { pageTitle, mobileHeaderTitle } = getPageTitles(location);
+  const { pageTitle } = getPageTitles(location);
 
   useEffect(() => {
     if (user) useGlobalUser(user, dispatch);
@@ -39,7 +39,6 @@ export const Layout = ({ children }) => {
   }, [isAboveMlg]);
 
   const handleDrawer = () => setIsDrawer((prev) => !prev);
-
 
   return (
     <div className="bg-[#fafbfd] min-h-screen h-full overflow-y-auto relative">

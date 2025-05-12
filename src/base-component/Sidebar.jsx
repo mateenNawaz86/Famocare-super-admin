@@ -1,4 +1,3 @@
-import { ModalType } from "../types/ui";
 import { motion } from "framer-motion";
 import logo from "../assets/svgs/logo.svg";
 import React, { useEffect, useState } from "react";

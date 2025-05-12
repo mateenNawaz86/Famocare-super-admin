@@ -1,5 +1,4 @@
 import { combineClasses } from "../../../utils/utility";
-import Loader from "../loadingEffect/loader";
 
 export const Button = ({
   inputType,
@@ -24,7 +23,7 @@ export const Button = ({
       disabled={loading || disabled}
       className={`${classes} flex justify-center`}
     >
-      <Loader height="50" width="50" radius="9" color={loaderColor || "#fff"} />
+      ...
     </button>
   ) : (
     <button

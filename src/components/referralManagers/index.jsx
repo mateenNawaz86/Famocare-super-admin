@@ -1,4 +1,3 @@
-import { useEmptyStates } from "../../utils/hooks";
 import { ReferralManagersTableRows } from "./table/table-rows";
 import { ReferralManagerFilters } from "./ref-managers-filters";
 import { ReferralManagersTableHeadings } from "./table/table-heading";
@@ -7,23 +6,15 @@ import { useReferralManagers } from "../../hooks/referral-managers/useReferralMa
 
 export const ReferralMangers = () => {
   const {
-    loading,
     itemsPerPage,
     currentPage,
     headings,
     handlePageChange,
-    totalCount,
     sort,
     hanldeSortChange,
     dummyRecords,
     handleAddReferralManager,
   } = useReferralManagers();
-
-  const CurrentComponent = useEmptyStates(
-    <ReferralManagersTableRows data={dummyRecords} />,
-    totalCount !== 0,
-    loading
-  );
 
   return (
     <>
@@ -34,7 +25,7 @@ export const ReferralMangers = () => {
           handleSort={hanldeSortChange}
           sortValue={sort}
         />
-        {CurrentComponent}
+        <ReferralManagersTableRows data={dummyRecords} />
       </div>
 
       <Pagination

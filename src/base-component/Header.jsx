@@ -1,12 +1,6 @@
 import { HambugerIcon } from "../assets/svgs/components/hamburger-icon";
 
-export const Header = ({
-  handleDrawer,
-  pageTitle,
-  profile,
-  name,
-  isSidebarOpen,
-}) => {
+export const Header = ({ handleDrawer, pageTitle, isSidebarOpen }) => {
   return (
     <div
       className={` ${
@@ -17,15 +11,6 @@ export const Header = ({
         <HambugerIcon onClick={handleDrawer} />
         <span className="text-6 font-semibold">{pageTitle}</span>
       </div>
-
-      {/* <div className="flex items-center gap-x-4">
-        <img
-          src={profile || profileIcon}
-          alt="icon"
-          className="h-[58px] w-[58px] rounded-full object-cover"
-        />
-        <span className="text-[22px] font-semibold">{name}</span>
-      </div> */}
     </div>
   );
 };

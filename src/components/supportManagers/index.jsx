@@ -1,4 +1,3 @@
-import { useEmptyStates } from "../../utils/hooks";
 import { SupportManagersTableRows } from "./table/table-rows";
 import { SupportManagerFilters } from "./support-managers-filters";
 import { SupportManagersTableHeadings } from "./table/table-heading";
@@ -7,23 +6,15 @@ import { useSupportManagers } from "../../hooks/support-managers/useSupportManag
 
 export const SupportMangers = () => {
   const {
-    loading,
     itemsPerPage,
     currentPage,
     headings,
     handlePageChange,
-    totalCount,
     sort,
     hanldeSortChange,
     dummyRecords,
     handleAddSupportManager,
   } = useSupportManagers();
-
-  const CurrentComponent = useEmptyStates(
-    <SupportManagersTableRows data={dummyRecords} />,
-    totalCount !== 0,
-    loading
-  );
 
   return (
     <>
@@ -34,7 +25,7 @@ export const SupportMangers = () => {
           handleSort={hanldeSortChange}
           sortValue={sort}
         />
-        {CurrentComponent}
+        <SupportManagersTableRows data={dummyRecords} />
       </div>
 
       <div className="hidden md:block">

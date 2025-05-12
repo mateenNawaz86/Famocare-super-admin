@@ -35,7 +35,6 @@ export const ReferralManagerFilters = ({ onAddReferralManager }) => {
     };
 
     setFilter(updatedFilter);
-    // handleFilterChange(updatedFilter);
   };
 
   return (

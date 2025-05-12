@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { combineClasses } from "../../../utils/utility";
 
 export const LinkButton = ({
@@ -8,23 +7,16 @@ export const LinkButton = ({
   containerClassName,
   size,
 }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   const containerClasses = combineClasses(
     "py-2 px-4 bg-primary rounded-[4px] text-white text-xs font-semibold w-fit h-fit flex items-center gap-x-[5px] md:gap-x-2 whitespace-nowrap",
     containerClassName
   );
 
   return (
-    <button
-      onClick={onClick}
-      className={containerClasses}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
+    <button onClick={onClick} className={containerClasses}>
       {Icon && (
         <div className="hidden md:block">
-          <Icon iconClassName={isHovered ? "#055860" : "#fff"} size={size} />
+          <Icon />
         </div>
       )}
       {text}

@@ -1,4 +1,3 @@
-import { useEmptyStates } from "../../utils/hooks";
 import { ReferralManagersTableRows } from "./table/table-rows";
 import { ReferralManagersTableHeadings } from "./table/table-heading";
 import { Pagination } from "../../base-component/ui/pagination/pagination";
@@ -8,12 +7,10 @@ import { useVersionControl } from "../../hooks/versionControl/useVersionControl"
 
 export const VersionControl = () => {
   const {
-    loading,
     itemsPerPage,
     currentPage,
     headings,
     handlePageChange,
-    totalCount,
     sort,
     hanldeSortChange,
     dummyRecords,
@@ -27,12 +24,6 @@ export const VersionControl = () => {
     setActiveTab(tab);
     setRenderComponent(true);
   };
-
-  const CurrentComponent = useEmptyStates(
-    <ReferralManagersTableRows data={dummyRecords} />,
-    totalCount !== 0,
-    loading
-  );
 
   return (
     <>
@@ -81,7 +72,7 @@ export const VersionControl = () => {
             handleSort={hanldeSortChange}
             sortValue={sort}
           />
-          {CurrentComponent}
+          <ReferralManagersTableRows data={dummyRecords} />
         </div>
       )}
 

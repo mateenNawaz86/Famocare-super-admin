@@ -1,5 +1,5 @@
 import { Form } from "../../../base-component/form/form";
-import { useAddVersionControl } from "../../../hooks/versionControl/useAddVersionControl";
+import { useAddVersionControl } from "../../../hooks/version-control/useAddVersionControl";
 
 export const AddVersionControl = () => {
   const { handleSubmit, errors, fields, onSubmit } = useAddVersionControl();

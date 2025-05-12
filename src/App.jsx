@@ -10,6 +10,7 @@ import { AddSupportManagersPage } from "./pages/supportManagers/add-support-mana
 import { AddReferralManagersPage } from "./pages/referralManagers/add-referral-manager";
 import { VersionControlPage } from "./pages/versionControl";
 import { AddVersionControlPage } from "./pages/versionControl/add-version-control";
+import { GuideTextPage } from "./pages/guide-text";
 
 const App = () => {
   const location = useLocation();
@@ -40,6 +41,7 @@ const App = () => {
           path="/add-version-control"
           element={<AddVersionControlPage />}
         />
+        <Route path="/guide-text" element={<GuideTextPage />} />
       </Routes>
     </>
   );

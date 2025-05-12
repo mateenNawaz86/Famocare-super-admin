@@ -22,7 +22,7 @@ export const getPageTitles = (location) => {
     "version-control": "Version Control",
     "add-version-control": "Add Version",
     "guide-videos": "Guide Videos",
-    "guide-texts": "Guide Texts",
+    "guide-text": "Guide Texts",
     groups: "Groups",
     "policy-documents": "Policy Documents",
     "limits-management": "Limits Management",

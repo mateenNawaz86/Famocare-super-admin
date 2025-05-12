@@ -17,11 +17,11 @@ export const CommonFilters = ({ onAdd, buttonText }) => {
 
     const updatedParams = new URLSearchParams(searchParams.toString());
 
-    if (value) {
-      updatedParams.set("text", value);
-    } else {
-      updatedParams.delete("text");
-    }
+    // if (value) {
+    //   updatedParams.set("text", value);
+    // } else {
+    //   updatedParams.delete("text");
+    // }
 
     navigate(`${location.pathname}?${updatedParams.toString()}`, {
       replace: true,

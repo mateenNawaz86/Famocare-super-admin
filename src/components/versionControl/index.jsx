@@ -3,7 +3,7 @@ import { ReferralManagersTableHeadings } from "./table/table-heading";
 import { Pagination } from "../../base-component/ui/pagination/pagination";
 import { CommonFilters } from "../../base-component/ui/filters";
 import { useState } from "react";
-import { useVersionControl } from "../../hooks/versionControl/useVersionControl";
+import { useVersionControl } from "../../hooks/version-control/useVersionControl";
 
 export const VersionControl = () => {
   const {

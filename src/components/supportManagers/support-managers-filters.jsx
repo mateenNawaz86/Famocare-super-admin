@@ -17,13 +17,13 @@ export const SupportManagerFilters = ({ onAddSupportManager }) => {
 
     const updatedParams = new URLSearchParams(searchParams.toString());
 
-    if (value) {
-      updatedParams.set("text", value);
-      updatedParams.set("page", "1");
-    } else {
-      updatedParams.delete("text");
-      updatedParams.delete("page");
-    }
+    // if (value) {
+    //   updatedParams.set("text", value);
+    //   updatedParams.set("page", "1");
+    // } else {
+    //   updatedParams.delete("text");
+    //   updatedParams.delete("page");
+    // }
 
     navigate(`${location.pathname}?${updatedParams.toString()}`, {
       replace: true,

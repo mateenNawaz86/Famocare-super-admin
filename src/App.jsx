@@ -12,6 +12,7 @@ import { VersionControlPage } from "./pages/versionControl";
 import { AddVersionControlPage } from "./pages/versionControl/add-version-control";
 import { GuideTextPage } from "./pages/guide-text";
 import { GuideVideoPage } from "./pages/guide-video";
+import { PolicyDocumentsPage } from "./pages/policy-docs";
 
 const App = () => {
   const location = useLocation();
@@ -44,6 +45,7 @@ const App = () => {
         />
         <Route path="/guide-video" element={<GuideVideoPage />} />
         <Route path="/guide-text" element={<GuideTextPage />} />
+        <Route path="/policy-documents" element={<PolicyDocumentsPage />} />
       </Routes>
     </>
   );

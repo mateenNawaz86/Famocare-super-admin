@@ -33,7 +33,7 @@ export const svgs = {
   dummy: <></>,
 };
 
-export const SideBar = ({ isDrawer, handleDrawer }) => {
+export const SideBar = () => {
   const { user } = useSelector((state) => state.auth);
   const location = useLocation();
   const dispatch = useDispatch();
@@ -99,10 +99,6 @@ export const SideBar = ({ isDrawer, handleDrawer }) => {
     <div
       className={`fixed left-0 w-[312px] bg-white rounded-r-[6px] h-full overflow-y-auto custom-scroll`}
     >
-      <div className="absolute top-4 right-4 xMini:block xl:hidden">
-        <CrossIcon onClick={handleDrawer} />
-      </div>
-
       <div className="flex items-center justify-center pt-[28px] pb-[43px]">
         <img src={logo} alt="Logo" className="h-[139px] w-[137px]" />
       </div>

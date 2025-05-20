@@ -11,6 +11,7 @@ import { AddReferralManagersPage } from "./pages/referralManagers/add-referral-m
 import { VersionControlPage } from "./pages/versionControl";
 import { AddVersionControlPage } from "./pages/versionControl/add-version-control";
 import { GuideTextPage } from "./pages/guide-text";
+import { GuideVideoPage } from "./pages/guide-video";
 
 const App = () => {
   const location = useLocation();
@@ -41,6 +42,7 @@ const App = () => {
           path="/add-version-control"
           element={<AddVersionControlPage />}
         />
+        <Route path="/guide-video" element={<GuideVideoPage />} />
         <Route path="/guide-text" element={<GuideTextPage />} />
       </Routes>
     </>

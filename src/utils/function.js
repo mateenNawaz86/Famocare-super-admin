@@ -21,7 +21,7 @@ export const getPageTitles = (location) => {
     "add-referral-manager": "Add Referral Manager",
     "version-control": "Version Control",
     "add-version-control": "Add Version",
-    "guide-videos": "Guide Videos",
+    "guide-video": "Guide Videos",
     "guide-text": "Guide Texts",
     groups: "Groups",
     "policy-documents": "Policy Documents",

@@ -15,22 +15,20 @@ export const GuideText = () => {
   } = useGuideText();
 
   return (
-    <>
-      <div className="bg-white rounded-[14px] border border-[#e0e0e0] py-5 px-[30px]">
-        <GuideTextTableHeadings
-          headings={headings}
-          handleSort={hanldeSortChange}
-          sortValue={sort}
-        />
-        <GuideTextTableRows data={dummyRecords} />
+    <div className="bg-white rounded-[14px] border border-[#e0e0e0] py-5 px-[30px]">
+      <GuideTextTableHeadings
+        headings={headings}
+        handleSort={hanldeSortChange}
+        sortValue={sort}
+      />
+      <GuideTextTableRows data={dummyRecords} />
 
-        <Pagination
-          totalItems={itemsPerPage}
-          itemsPerPage={itemsPerPage}
-          onPageChange={handlePageChange}
-          currentPage={currentPage}
-        />
-      </div>
-    </>
+      <Pagination
+        totalItems={itemsPerPage}
+        itemsPerPage={itemsPerPage}
+        onPageChange={handlePageChange}
+        currentPage={currentPage}
+      />
+    </div>
   );
 };

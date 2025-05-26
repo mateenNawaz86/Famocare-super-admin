@@ -10,7 +10,7 @@ export function formatDateString(dateString) {
 
 export const getPageTitles = (location) => {
   const pathSegments = location.pathname.split("/").filter(Boolean);
-  const lastSegment = pathSegments[pathSegments.length - 1];
+  const joinedPath = pathSegments.join("/"); // full path without leading '/'
 
   const titleMap = {
     "profile-setting": "Profile Settings",
@@ -23,13 +23,13 @@ export const getPageTitles = (location) => {
     "add-version-control": "Add Version",
     "guide-video": "Guide Videos",
     "guide-text": "Guide Texts",
+    "guide-text/edit": "Edit Guide Text",
     groups: "Groups",
     "policy-documents": "Policy Documents",
     "limits-management": "Limits Management",
   };
 
-  let pageTitle = titleMap[lastSegment] || "Dashboard";
-
+  const pageTitle = titleMap[joinedPath] || "Dashboard";
   return { pageTitle };
 };
 

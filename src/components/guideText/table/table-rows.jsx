@@ -1,4 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 export const GuideTextTableRows = ({ data }) => {
+  const navigate = useNavigate();
+
+  const handleEditText = () => {
+    navigate("/guide-text/edit");
+  };
+
   return (
     <div className={`overflow-y-visible flex flex-col gap-y-[10px] mt-[10px]`}>
       {data?.map((item, index) => (
@@ -17,9 +25,10 @@ export const GuideTextTableRows = ({ data }) => {
           </span>
 
           <div
+            onClick={handleEditText}
             className={`bg-[#009F44] rounded-md flex items-center justify-center py-1 px-2 cursor-pointer`}
           >
-            <span className=" text-white">Edit</span>
+            <span className="text-white">Edit</span>
           </div>
         </div>
       ))}

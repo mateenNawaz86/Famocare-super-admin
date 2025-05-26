@@ -13,7 +13,7 @@ export const Button = ({
   disabled,
   id,
 }) => {
-  const defaultClasses = `min-w-fit px-4 bg-primary hover:bg-buttonHover text-white !h-[50px] font-medium rounded-lg`;
+  const defaultClasses = `min-w-fit px-4 bg-primary text-white !h-[50px] font-medium rounded-lg`;
   const classes = combineClasses(defaultClasses, className);
 
   return loading ? (
@@ -29,7 +29,7 @@ export const Button = ({
     <button
       id={id}
       type={inputType}
-      className={`hover:bg-buttonHover hover:text-white text-dark ${
+      className={`text-dark ${
         success && "flex items-center gap-x-2"
       } flex items-center justify-center ${classes}`}
       onClick={onClick}

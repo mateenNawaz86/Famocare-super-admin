@@ -14,6 +14,7 @@ import { GuideTextPage } from "./pages/guide-text";
 import { GuideVideoPage } from "./pages/guide-video";
 import { PolicyDocumentsPage } from "./pages/policy-docs";
 import { EditGuideTextPage } from "./pages/edit-guide-text";
+import { EditPolicyDocumentsPage } from "./pages/edit-policy-documents";
 
 const App = () => {
   const location = useLocation();
@@ -48,6 +49,10 @@ const App = () => {
         <Route path="/guide-text" element={<GuideTextPage />} />
         <Route path="/guide-text/edit" element={<EditGuideTextPage />} />
         <Route path="/policy-documents" element={<PolicyDocumentsPage />} />
+        <Route
+          path="/policy-documents/edit"
+          element={<EditPolicyDocumentsPage />}
+        />
       </Routes>
     </>
   );

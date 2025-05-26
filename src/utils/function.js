@@ -10,7 +10,7 @@ export function formatDateString(dateString) {
 
 export const getPageTitles = (location) => {
   const pathSegments = location.pathname.split("/").filter(Boolean);
-  const joinedPath = pathSegments.join("/"); // full path without leading '/'
+  const joinedPath = pathSegments.join("/");
 
   const titleMap = {
     "profile-setting": "Profile Settings",
@@ -24,6 +24,7 @@ export const getPageTitles = (location) => {
     "guide-video": "Guide Videos",
     "guide-text": "Guide Texts",
     "guide-text/edit": "Edit Guide Text",
+    "policy-documents/edit": "Policy Documents",
     groups: "Groups",
     "policy-documents": "Policy Documents",
     "limits-management": "Limits Management",

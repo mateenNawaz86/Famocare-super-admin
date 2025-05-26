@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import editIcon from "../../assets/pngs/edit-icon.png";
 
 export const PolicyDocuments = () => {
+  const navigate = useNavigate();
+
   const data = [
     {
       text: "Your place name",
@@ -106,6 +109,10 @@ export const PolicyDocuments = () => {
     },
   ];
 
+  const handleEditPdf = () => {
+    navigate("/policy-documents/edit");
+  };
+
   return (
     <div className="bg-white rounded-[14px] border border-[#e0e0e0] py-10 px-[67px] mb-10">
       <div className="grid grid-cols-3 gap-5">
@@ -118,7 +125,12 @@ export const PolicyDocuments = () => {
               <span className="text-newPreimary font-medium text-xs">
                 {item.text}
               </span>
-              <img src={editIcon} alt="edit" className="cursor-pointer" />
+              <img
+                src={editIcon}
+                alt="edit"
+                className="cursor-pointer"
+                onClick={handleEditPdf}
+              />
             </div>
           </div>
         ))}

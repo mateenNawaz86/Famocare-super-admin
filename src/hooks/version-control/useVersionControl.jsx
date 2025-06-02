@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { readFreeUserListing } from "../../api/slices/freeUserSlice/freeUser";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { FiltersDefaultValues } from "../../utils/static";
-import profile from "../../assets/pngs/profile.jpg";
 
 export const useVersionControl = () => {
   const dispatch = useDispatch();
@@ -13,7 +12,7 @@ export const useVersionControl = () => {
   const { user, loading: authLoading } = useSelector((state) => state.auth);
   const [currentPageRows, setCurrentPageRows] = useState([]);
   const [currentPage, setCurrentPage] = useState(getPageFromURL());
-  const { freeUser, loading } = useSelector((state) => state.freeUser);
+  const { freeUser } = useSelector((state) => state.freeUser);
   const [searchParams, setSearchParams] = useSearchParams(location.search);
   const [filter, setFilter] = useState({
     sort: FiltersDefaultValues.None,
@@ -134,60 +133,70 @@ export const useVersionControl = () => {
       Version: 1.08,
       description: "Enter Description",
       releaseDate: "2023-10-01",
+      text: "Latest",
     },
     {
       id: 2,
       Version: 1.12,
       description: "Initial feature rollout",
       releaseDate: "2023-11-15",
+      text: "Latest",
     },
     {
       id: 3,
       Version: 1.25,
       description: "Minor bug fixes and improvements",
       releaseDate: "2024-01-03",
+      text: "Latest",
     },
     {
       id: 4,
       Version: 1.33,
       description: "Performance optimization update",
       releaseDate: "2024-02-21",
+      text: "Beta",
     },
     {
       id: 5,
       Version: 1.45,
       description: "New UI components added",
       releaseDate: "2024-04-10",
+      text: "Beta",
     },
     {
       id: 6,
       Version: 1.51,
       description: "Security patch release",
       releaseDate: "2024-06-06",
+      text: "Beta",
     },
     {
       id: 7,
       Version: 1.63,
       description: "Database schema changes",
       releaseDate: "2024-07-18",
+      text: "Latest",
     },
     {
       id: 8,
       Version: 1.7,
       description: "User feedback implementation",
       releaseDate: "2024-09-12",
+      text: "Beta",
     },
     {
       id: 9,
       Version: 1.82,
       description: "Improved logging and monitoring",
       releaseDate: "2024-11-03",
+      text: "Latest",
     },
     {
       id: 10,
       Version: 1.91,
       description: "Final stable release for the year",
       releaseDate: "2024-12-22",
+      text: "Beta",
     },
   ];
 

@@ -32,12 +32,12 @@ export const ReferralManagersTableRows = ({ data }) => {
           >
             <span className="text-base font-medium">{item?.status}</span>
           </div>
-          <div className={`flex items-center justify-end gap-x-[14px]`}>
+          {/* <div className={`flex items-center justify-end gap-x-[14px]`}>
             <span className="text-base font-medium">More</span>
             <ThreeDotsIcon />
-          </div>
+          </div> */}
 
-          {/* <MoreField
+          <MoreField
             handleChange={(value) => console.log("Selected action:", value)}
             options={[
               { label: "Edit", value: "edit" },
@@ -45,7 +45,7 @@ export const ReferralManagersTableRows = ({ data }) => {
               { label: "Block", value: "block" },
             ]}
             containerClassName="w-[120px] flex justify-end"
-          /> */}
+          />
         </div>
       ))}
     </div>

@@ -1,26 +1,15 @@
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { ProfileSettingFormFields } from "../../components/profileSetting/profile-setting-fields";
-import { generateProfileSettingValidationSchema } from "../../validation/auth-validation";
 
 export const useAddSupportManager = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  const { loading, errorData } = useSelector((state) => state.auth);
-  const schema = generateProfileSettingValidationSchema();
-
+  const { loading } = useSelector((state) => state.auth);
   const {
     register,
     handleSubmit,
     control,
     formState: { errors },
-    setError,
-  } = useForm({
-    resolver: yupResolver(schema),
-  });
+  } = useForm({});
 
   const fields = ProfileSettingFormFields(register, loading, control);
 

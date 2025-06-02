@@ -1,9 +1,9 @@
 import { useRef, useState } from "react";
-import { PlusIcon } from "../../assets/svgs/components/plus-icon";
 import { LinkButton } from "./button/link-icon";
 import InputField from "./fields/search-fields";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { FiltersDefaultValues } from "../../utils/static";
+import { VersionIcon } from "../../assets/svgs/components/version-icon";
 
 export const CommonFilters = ({ onAdd, buttonText }) => {
   const inputRef = useRef(null);
@@ -38,6 +38,7 @@ export const CommonFilters = ({ onAdd, buttonText }) => {
   return (
     <div className="flex items-center justify-between">
       <LinkButton
+        icon={VersionIcon}
         text={buttonText}
         onClick={onAdd}
         containerClassName="bg-newPreimary text-white rounded-md py-2 px-3 text-sm font-semibold md:gap-x-2"

@@ -153,9 +153,6 @@ export const findErrorMessage = (errors, data = [], fieldName) => {
   return currentError?.message || undefined;
 };
 
-export const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-};
 
 export function returnStep(
   data,

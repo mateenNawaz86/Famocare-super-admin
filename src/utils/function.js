@@ -24,6 +24,7 @@ export const getPageTitles = (location) => {
     "guide-video": "Guide Videos",
     "guide-text": "Guide Texts",
     "guide-text/edit": "Edit Guide Text",
+    "guide-video/edit": "Edit Guide Video",
     "policy-documents/edit": "Policy Documents",
     groups: "Groups",
     "policy-documents": "Policy Documents",

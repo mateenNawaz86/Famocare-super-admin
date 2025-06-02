@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import editIcon from "../../assets/pngs/edit-icon.png";
 import dummyVideo from "../../assets/videos/video.mp4";
 
 export const GuideVideo = () => {
+  const navigate = useNavigate();
+
   const data = [
     {
       text: "Your place name",
@@ -28,6 +31,11 @@ export const GuideVideo = () => {
       videoSrc: dummyVideo,
     },
   ];
+
+  const handleEditVideo = () => {
+    navigate("/guide-video/edit", { replace: true });
+  };
+
   return (
     <div className="bg-white rounded-[14px] border border-[#e0e0e0] py-10 px-[67px] mb-10">
       <div className="grid grid-cols-3 gap-[93px]">
@@ -41,7 +49,12 @@ export const GuideVideo = () => {
               <span className="text-newPreimary font-medium text-xs">
                 {item.text}
               </span>
-              <img src={editIcon} alt="edit" className="cursor-pointer" />
+              <img
+                src={editIcon}
+                alt="edit"
+                className="cursor-pointer"
+                onClick={handleEditVideo}
+              />
             </div>
           </div>
         ))}

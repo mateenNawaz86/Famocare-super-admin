@@ -1,9 +1,6 @@
-import React, { useEffect } from "react";
 import { AuthPage } from "./pages/auth";
-import { scrollToTop } from "./utils/utility";
-import { ToastContainer } from "react-toastify";
 import { ReferralManagersPage } from "./pages/referralManagers";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { ProfileSettingPage } from "./pages/profileSetting";
 import { SupportManagersPage } from "./pages/supportManagers";
 import { AddSupportManagersPage } from "./pages/supportManagers/add-support-manager";
@@ -15,20 +12,18 @@ import { GuideVideoPage } from "./pages/guide-video";
 import { PolicyDocumentsPage } from "./pages/policy-docs";
 import { EditGuideTextPage } from "./pages/edit-guide-text";
 import { EditPolicyDocumentsPage } from "./pages/edit-policy-documents";
+import { LimitsManagementPage } from "./pages/limits-management";
+import { EditVideoPage } from "./pages/edit-video";
+import { NotificationPage } from "./pages/notifications";
+import { GroupsPage } from "./pages/groups";
 
 const App = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    scrollToTop();
-  }, [location.pathname]);
-
   return (
     <>
-      <ToastContainer position="top-right" autoClose={3000} />
-
       <Routes>
         <Route path="/" element={<AuthPage />} />
+        <Route path="/notifications" element={<NotificationPage />} />
+        <Route path="/groups" element={<GroupsPage />} />
         <Route path="/referral-managers" element={<ReferralManagersPage />} />
         <Route
           path="/add-referral-manager"
@@ -46,9 +41,11 @@ const App = () => {
           element={<AddVersionControlPage />}
         />
         <Route path="/guide-video" element={<GuideVideoPage />} />
+        <Route path="guide-video/edit" element={<EditVideoPage />} />
         <Route path="/guide-text" element={<GuideTextPage />} />
         <Route path="/guide-text/edit" element={<EditGuideTextPage />} />
         <Route path="/policy-documents" element={<PolicyDocumentsPage />} />
+        <Route path="/limits-management" element={<LimitsManagementPage />} />
         <Route
           path="/policy-documents/edit"
           element={<EditPolicyDocumentsPage />}

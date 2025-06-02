@@ -13,7 +13,7 @@ export const useSupportManagers = () => {
   const { user, loading: authLoading } = useSelector((state) => state.auth);
   const [currentPageRows, setCurrentPageRows] = useState([]);
   const [currentPage, setCurrentPage] = useState(getPageFromURL());
-  const { freeUser, loading } = useSelector((state) => state.freeUser);
+  const { freeUser } = useSelector((state) => state.freeUser);
   const [searchParams, setSearchParams] = useSearchParams(location.search);
   const [filter, setFilter] = useState({
     sort: FiltersDefaultValues.None,

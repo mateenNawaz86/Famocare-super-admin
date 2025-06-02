@@ -26,14 +26,23 @@ export const AddVersionControlFormFields = (register, loading, control) => {
         htmlFor: `colour`,
         className: "mb-3 font-semibold",
       },
+      // field: {
+      //   type: Field.input,
+      //   id: "Release Date",
+      //   name: "Release Date",
+      //   inputType: "text",
+      //   placeholder: "dd/mm/yyyy",
+      //   className: "w-full pl-2",
+      //   register,
+      // },
       field: {
-        type: Field.input,
-        id: "Release Date",
-        name: "Release Date",
-        inputType: "text",
-        placeholder: "dd/mm/yyyy",
-        className: "w-full pl-2",
+        type: Field.date,
+        className:
+          "!py-4 !pr-8 pl-4 !border-[#BFBFBF] focus:!border-primary w-full",
+        id: `date`,
+        name: `date`,
         register,
+        dateType: "date",
       },
     },
 
@@ -62,7 +71,7 @@ export const AddVersionControlFormFields = (register, loading, control) => {
         className: "mb-3 font-semibold",
       },
       field: {
-        type: Field.input,
+        type: Field.text,
         id: "Description",
         name: "Description",
         inputType: "text",
@@ -79,8 +88,7 @@ export const AddVersionControlFormFields = (register, loading, control) => {
         id: "button",
         text: "Add Version",
         inputType: "submit",
-        className:
-          "rounded-[6px] bg-[#055860] w-[309px] h-[50px]",
+        className: "rounded-[6px] bg-[#055860] w-[309px] h-[50px]",
         loading,
       },
     },

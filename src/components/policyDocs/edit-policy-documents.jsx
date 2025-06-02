@@ -3,7 +3,7 @@ import { Button } from "../../base-component/ui/button/button";
 import pdfImage from "../../assets/pngs/pdf-img.png";
 
 export const EditPolicyDocuments = () => {
-  const fileInputRef = useRef(null); // ✅ Just null for JS
+  const fileInputRef = useRef(null);
   const [fileName, setFileName] = useState("");
 
   const handleFileChange = (e) => {

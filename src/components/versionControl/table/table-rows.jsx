@@ -1,5 +1,3 @@
-import profile from "../../../assets/pngs/profile.jpg";
-import { ThreeDotsIcon } from "../../../assets/svgs/components/three-dots-icon";
 import MoreField from "../../../base-component/ui/fields/more-fields";
 
 export const ReferralManagersTableRows = ({ data }) => {
@@ -23,20 +21,36 @@ export const ReferralManagersTableRows = ({ data }) => {
             {item?.releaseDate}
           </span>
 
-          <div className={`flex items-center justify-center gap-x-[14px]`}>
+          {/* <div className={`flex items-center justify-center gap-x-[14px]`}>
             <span className="text-base font-medium">More</span>
             <ThreeDotsIcon />
-          </div>
+          </div> */}
 
-          {/* <MoreField
-            handleChange={(value) => console.log("Selected action:", value)}
-            options={[
-              { label: "Edit", value: "edit" },
-              { label: "Delete", value: "delete" },
-              { label: "Block", value: "block" },
-            ]}
-            containerClassName="w-[120px] flex justify-end"
-          /> */}
+          <div className="flex items-center">
+            <div
+              className={`px-[29px] py-2 ${
+                item.text === "Beta"
+                  ? "bg-[#f6f0e1] text-[#F4D370]"
+                  : item.text === "Latest"
+                  ? "bg-[#d1ddf7] text-[#0057FF]"
+                  : ""
+              }`}
+            >
+              <span className="text-sm font-normal">{item.text}</span>
+            </div>
+
+            <MoreField
+              handleChange={(value) => console.log("Selected action:", value)}
+              options={[
+                { label: "Beta", value: "beta" },
+                { label: "Latest", value: "latest" },
+                { label: "Stable", value: "stable" },
+                { label: "Outdated", value: "outdated" },
+              ]}
+              containerClassName="w-[120px] flex justify-end"
+              isVersion={true}
+            />
+          </div>
         </div>
       ))}
     </div>

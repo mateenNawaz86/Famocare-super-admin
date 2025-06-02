@@ -13,7 +13,7 @@ export const Button = ({
   disabled,
   id,
 }) => {
-  const defaultClasses = `min-w-fit px-4 bg-primary text-white !h-[50px] font-medium rounded-lg`;
+  const defaultClasses = `min-w-fit px-4 bg-newPreimary text-white !h-[50px] font-medium rounded-lg`;
   const classes = combineClasses(defaultClasses, className);
 
   return loading ? (

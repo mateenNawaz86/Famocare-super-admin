@@ -1,6 +1,5 @@
 import axios from "axios";
 import { logout } from "../utils/auth";
-import { toast } from "react-toastify";
 import Cookies from "js-cookie";
 
 const API_DOMAIN = import.meta.env.VITE_API_DOMAIN;
@@ -47,8 +46,6 @@ export async function request({ method, url, data, headers }) {
   try {
     response = await promise;
   } catch (error) {
-    toast.error(`${error?.response?.data?.message}`);
-
     if (error?.response?.data?.code === 401) {
       logout();
       window.location = "/";
@@ -68,8 +65,6 @@ export async function deleteRequestWithBody({ method, url, data, headers }) {
   try {
     response = await promise;
   } catch (error) {
-    toast.error(`${error?.response?.data?.message}`);
-
     if (error?.response?.data?.code === 401) {
       logout();
       window.location = "/";
@@ -88,8 +83,6 @@ export async function newRequest({ method, url, data, headers }) {
   try {
     response = await promise;
   } catch (error) {
-    toast.error(`${error?.response?.data?.message}`);
-
     if (error?.response?.data?.code === 401) {
       logout();
       window.location = "/";

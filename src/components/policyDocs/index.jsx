@@ -118,7 +118,7 @@ export const PolicyDocuments = () => {
       <div className="grid grid-cols-3 gap-5">
         {data.map((item) => (
           <div className="flex flex-col shadow-lg">
-            <p className="text-xs font-normal bg-yellow-100 text-black p-5">
+            <p className="text-xs font-normal bg-[#f7f8f2] text-black p-5">
               {item.pdfText}
             </p>
             <div className="flex items-center justify-between bg-white px-3 py-5">

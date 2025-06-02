@@ -8,6 +8,7 @@ export default function MoreField({
   handleChange = () => {},
   containerClassName = "",
   dropdownClassName = "",
+  isVersion = false,
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -26,7 +27,7 @@ export default function MoreField({
         onClick={toggleDropdown}
         className="cursor-pointer flex items-center gap-x-[14px]"
       >
-        <span className="text-base font-medium">More</span>
+        {!isVersion && <span className="text-base font-medium">More</span>}
         <ThreeDotsIcon />
       </div>
 

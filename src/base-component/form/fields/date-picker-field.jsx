@@ -59,7 +59,7 @@ export const DatePicker = ({
             disabled={disable}
             className={`${classes} relative`}
           />
-          {dateType === "time" ? (
+          {/* {dateType === "time" ? (
             <div
               className="absolute right-4 cursor-pointer"
               onClick={() => document.getElementById(id)?.focus()}
@@ -85,7 +85,7 @@ export const DatePicker = ({
                 />
               </svg>
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </div>
